@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { deriveContent, normalizeContent } from "../src/lib/contentModel.js";
+import { defaultContent, deriveContent, normalizeContent } from "../src/lib/contentModel.js";
 
 test("deriveContent hides draft projects and sorts listed projects by priority", () => {
   const content = deriveContent({
@@ -50,10 +50,11 @@ test("deriveContent restores fragmented decision and next-step copy for any case
     ],
   });
 
-  assert.match(content.projectBySlug("portfolio").decisions[0], /Preserve the 1\.0 portfolio pattern/);
-  assert.match(content.projectBySlug("portfolio").nextSteps[0], /visual timeline/);
-  assert.match(content.projectBySlug("bakerlinks").decisions[0], /Supabase/);
-  assert.match(content.projectBySlug("bakerlinks").nextSteps[0], /foundation for my own social media links site/);
+  for (const slug of ["portfolio", "bakerlinks"]) {
+    const defaults = defaultContent.projects.find((project) => project.slug === slug);
+    assert.deepEqual(content.projectBySlug(slug).decisions, defaults.decisions);
+    assert.deepEqual(content.projectBySlug(slug).nextSteps, defaults.nextSteps);
+  }
 });
 
 test("deriveContent restores default emphasis stage for saved project content", () => {
@@ -83,7 +84,7 @@ test("deriveContent restores default emphasis stage for saved project content", 
   assert.equal(content.projectBySlug("bakerparks").stage, "featured");
   assert.deepEqual(
     content.listedProjects.slice(0, 5).map((project) => project.slug),
-    ["sketchlet", "mikeslist", "bakerparks", "bakerlinks", "making-tools"],
+    ["sketchlet", "mikeslist", "bakerlinks", "bakerparks", "bakerversity"],
   );
 });
 
@@ -108,6 +109,8 @@ test("deriveContent preserves explicit saved emphasis stages", () => {
 test("active status does not override the chosen project order", () => {
   const content = deriveContent();
   assert.deepEqual(content.listedProjects.slice(0, 6).map((project) => project.slug),
-    ["sketchlet", "bakerparks", "bakerlinks", "making-tools", "mikeslist", "portfolio"]);
+    ["sketchlet", "bakerlinks", "bakerparks", "bakerversity", "mikeslist", "portfolio"]);
   assert.equal(content.projectBySlug("portfolio").stage, "featured");
+  assert.equal(content.projectBySlug("bakerversity").stage, "featured");
+  assert.equal(content.projectBySlug("making-tools").stage, "supporting");
 });

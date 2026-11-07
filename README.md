@@ -7,7 +7,7 @@ A personal portfolio connecting professional experience in web production, techn
 ## What it presents
 
 - **Professional experience:** content production, editorial systems, accessibility work, and collaboration across publishing teams.
-- **Selected projects:** Sketchlet, BakerParks / SF Parks Explorer, BakerLinks, and tools for personal hobbies.
+- **Selected projects:** Sketchlet, BakerLinks, BakerParks / SF Parks Explorer, and Bakerversity.
 - **Case studies:** project context, responsibilities, implementation decisions, current results, limitations, and next steps, with application and repository links where available.
 
 The portfolio is actively evolving. Some project cards still use stock imagery while product screenshots and more detailed evidence are being collected. The deployed site may differ from local changes awaiting publication.
@@ -28,8 +28,8 @@ The frontend uses **React, Vite, and Tailwind CSS**. A **Vercel serverless endpo
 Use a Node.js version compatible with the installed Vite release and npm. The repository records npm 11.6.2 as its package manager.
 
 ```sh
-git clone https://github.com/michael-baker-content/portfolio-deluxe.git
-cd portfolio-deluxe
+git clone https://github.com/michael-baker-content/michael-portfolio.git
+cd michael-portfolio
 npm ci
 npm run dev
 ```
@@ -151,4 +151,4 @@ The frontend can also be hosted as static files with a route fallback. `public/_
 
 This project began as a fork of [machadop1407/beautiful-react-tailwind-portfolio](https://github.com/machadop1407/beautiful-react-tailwind-portfolio), which supplied the initial React/Tailwind portfolio foundation.
 
-The current implementation adds the experience and project paths, structured case studies, search and filtering, owner content editing, validation and fallback behavior, and a revised visual identity. The repository retains the name `portfolio-deluxe` from that development history.
+The current implementation adds the experience and project paths, structured case studies, search and filtering, owner content editing, validation and fallback behavior, and a revised visual identity. The repository is now named `michael-portfolio`; it was previously named `portfolio-deluxe`.

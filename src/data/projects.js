@@ -17,7 +17,7 @@ export const projects = [
       "A case study about evolving the forked 1.0 portfolio into a themed experiment, then folding that experiment back into a more useful 2.0 site.",
     cardImage: stockImage("photo-1497366754035-f200968a6e72", "A desk workspace with a laptop, notebook, and planning materials."),
     detailHref: "/projects/portfolio",
-    repoHref: "https://github.com/michael-baker-content/portfolio-deluxe",
+    repoHref: "https://github.com/michael-baker-content/michael-portfolio",
     tone: "gold",
     status: "Portfolio system",
     timeline: "2026",
@@ -297,7 +297,7 @@ export const projects = [
     slug: "making-tools",
     visibility: "listed",
     stage: "supporting",
-    priority: 40,
+    priority: 80,
     category: "Hobby tools",
     label: "Case study",
     emphasisLabel: "Active",
@@ -553,11 +553,11 @@ export const projects = [
   {
     slug: "bakerversity",
     visibility: "listed",
-    stage: "background",
-    priority: 80,
+    stage: "featured",
+    priority: 40,
     category: "Learning platform",
     label: "Case study",
-    emphasisLabel: "Background",
+    emphasisLabel: "Featured",
     title: "Bakerversity",
     description:
       "A promising online learning platform prototype waiting for course content strong enough to justify its production tools.",
@@ -619,71 +619,83 @@ export const projects = [
     ],
   },
   {
-    slug: "bakerlinks",
-    visibility: "listed",
-    stage: "supporting",
-    priority: 30,
-    category: "Publishing platform",
-    label: "Case study",
-    emphasisLabel: "Supported",
-    title: "BakerLinks",
-    description:
-      "An operational link-hub prototype that powers my own social links site and still supports users making project pages.",
-    cardImage: stockImage("photo-1516321497487-e288fb19713f", "A laptop workspace used for publishing and managing online links."),
-    detailHref: "/projects/bakerlinks",
-    repoHref: "https://github.com/michael-baker-content/bakerlinks",
-    tone: "spotlight",
-    status: "Public platform",
-    timeline: "2026",
-    role: "Product design, full-stack prototyping, social publishing workflow",
-    collaborators: ["Michael Baker"],
-    tools: ["TypeScript", "React", "Next.js", "Tailwind", "Vercel", "Supabase"],
-    evidence: ["Profile pages", "Project hubs", "Operational prototype"],
-    metrics: [
-      { label: "Product type", value: "Link hub" },
-      { label: "Backend", value: "Supabase" },
-      { label: "Deploy", value: "Vercel" },
+    "slug": "bakerlinks",
+    "visibility": "listed",
+    "stage": "supporting",
+    "priority": 15,
+    "category": "Publishing platform",
+    "label": "Case study",
+    "emphasisLabel": "Public site",
+    "title": "BakerLinks",
+    "description": "A personal publishing tool for sharing projects, links, and an introduction, with flexible styling, curated animated backgrounds, and Markdown About content.",
+    "cardImage": stockImage("photo-1516321497487-e288fb19713f", "A laptop workspace used for publishing and managing online links."),
+    "detailHref": "/projects/bakerlinks",
+    "appHref": "https://bakerlinks.com",
+    "repoHref": "https://github.com/michael-baker-content/bakerlinks",
+    "tone": "spotlight",
+    "status": "Public site · ongoing refinement",
+    "timeline": "2026",
+    "role": "Product direction, interface decisions, and iterative review",
+    "collaborators": [
+      "Michael Baker",
+      "Codex — coding and implementation"
     ],
-    summary:
-      "BakerLinks is an operational link-hub prototype I still use as the foundation for my own social media links site. It lets users make hub pages for current projects, while also showing the limits of entering a crowded category without a very strong competitive package.",
-    problem:
-      "The link-in-bio and social-links category has strong existing options. A new product in this space needs a very clear package, audience, and reason to switch. BakerLinks is useful, but its opportunity space is narrower than the prototype first suggested.",
-    outcome:
-      "The project remains useful as a working publishing tool and as the base for my own social links presence. It also taught me to evaluate product categories more skeptically: a pleasant build still needs a sharp market reason to grow beyond prototype scale.",
-    decisions: [
-      "Use Supabase for hosted data and auth patterns so the product can test publishing behavior before custom infrastructure.",
-      "Render public profile pages with Next.js so they are fast, shareable, and deployable.",
-      "Keep the first version focused on project hubs and simple social links rather than trying to compete with full website builders.",
-      "Recognize that the category is crowded, so a future version would need a stronger differentiator than basic link publishing.",
-      "Keep supporting the operational version where it has real use: my own hub page and users who want a simple page for current projects.",
+    "tools": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Vercel",
+      "Supabase"
     ],
-    sections: [
+    "evidence": [
+      "Profile and Style controls",
+      "Curated animation",
+      "Markdown About tab",
+      "Link-click analytics"
+    ],
+    "metrics": [],
+    "summary": "BakerLinks gives people a personal page for sharing projects, social links, and the story behind their work. It began as a basic link-in-bio assignment in self-guided learning material and became a working application I use to share my own projects. Its development has focused on customization, publishing, and the practical details that make an editor satisfying to use.",
+    "problem": "A page for sharing creative, technical, professional, or personal projects needs room for individual expression. The challenge is to offer that flexibility through an interface that stays straightforward: organize links, introduce yourself, choose a visual style, and understand how those choices affect the page. My own frustrations with everyday applications inform this work. Finding friction and deciding how to resolve it is one of the parts of building software I enjoy most.",
+    "outcome": "BakerLinks is a public application, and I am currently its only user. My page brings together my projects and an introduction to my work creating diverse web prototypes. The application includes profile and style controls, public pages, Markdown About content, and link-click analytics. I’m particularly pleased with the range of customization available through the Profile and Style panels. That is my assessment of the interface; broader usability and benefits for other people remain to be evaluated.",
+    "decisions": [
+      "Offer broad customization through focused Profile and Style panels.",
+      "Treat the editor preview and public page as related views with different demands.",
+      "Curate animated backgrounds while allowing personal static-image uploads.",
+      "Add an optional Markdown About tab for context beyond links.",
+      "Maintain click totals and dated events for different analytics views.",
+      "Keep owner publishing controls separate from administrator verification."
+    ],
+    "sections": [
       {
-        title: "Working Prototype",
-        body:
-          "BakerLinks is still operational and useful. It supports users who want to make a hub page for current projects, and it powers my own social media links site. That gives the prototype a real-life use case even if the broader product opportunity is limited.",
+        "title": "Customization through a simple interface",
+        "body": "Profile and Style are my favorite parts of BakerLinks. Together, they offer control over identity, images, social links, layouts, fonts, and colors. My aim has been to make those options approachable and keep the actions needed to complete a task to a minimum. The satisfaction comes from bringing many choices into an interface that I find simple to use. I have not measured task completion or compared its usability with other tools."
       },
       {
-        title: "Competitive Reality",
-        body:
-          "The project also clarified how competitive this category is. Link-hub tools already have strong options, so a new product would need a more distinctive package, sharper audience, or better reason to switch.",
+        "title": "Preview and public page have different jobs",
+        "body": "The preview makes customization more immediate and adds visual appeal to the editing experience. But a preview inside an editor and a standalone public page have different demands, and some of those demands conflict. I treat that tension as a design consideration in its own right. The preview helps someone assess styling within the editor; the public page needs to present their content as a complete destination. Developing both involves decisions about what each view should show and how closely they should correspond."
       },
       {
-        title: "Platform Choices",
-        body:
-          "Next.js, Supabase, Tailwind, and Vercel made it possible to build a real publishing flow quickly: editable profile data, public pages, hosted storage, and a deployable platform structure.",
+        "title": "Curated motion, personal static images",
+        "body": "Animated backgrounds added the visual energy I felt was missing. The important decision was to provide a curated selection rather than allow people to upload their own animated backgrounds. Static images remain open to personal uploads. I gave Codex the requirements and let it choose the animated options, which satisfied what I wanted. The story here is the boundary around customization and the addition of motion, rather than an elaborate art-direction process."
       },
       {
-        title: "Product Judgment",
-        body:
-          "The strongest lesson may be strategic. I enjoyed building BakerLinks, but the project taught me to separate a satisfying prototype from a large opportunity. Not every useful product needs to become a major platform.",
+        "title": "Room for the story behind the links",
+        "body": "An optional About tab gives the page space for more than destinations. Someone can introduce themselves and explain the work their links point toward. Integrating Markdown was a highlight for me. It adds headings, emphasis, lists, and other text formatting while keeping the feature focused on writing. My own About page uses that space to discuss the prototypes I’m building and how my work is evolving."
       },
+      {
+        "title": "Analytics as a database challenge",
+        "body": "Getting analytics working correctly was a satisfying database problem. A lifetime click total and a chart covering recent days need different kinds of records. The implementation maintains per-link totals alongside dated click events, updating both through one database operation. The owner dashboard uses those records to show totals, comparisons between links, and activity across selectable periods. These are tools for inspecting clicks, rather than evidence of audience growth or project success."
+      },
+      {
+        "title": "Separate publishing from administration",
+        "body": "Profile owners manage their content, appearance, and analytics. Administrator-only verification is a separate responsibility. Directory inclusion combines an owner’s choice to participate with administrator verification. Keeping those permissions distinct prevents an administrative capability from being presented as an ordinary profile-editing feature."
+      }
     ],
-    nextSteps: [
-      "Continue using BakerLinks as the foundation for my own social media links site.",
-      "Support the current operational product for users who want simple hub pages for active projects.",
-      "If the product expands, define a sharper differentiator before investing in a broader competitive push.",
-    ],
+    "nextSteps": [
+      "Explore more advanced publishing features, including capabilities familiar from other platforms and ideas I haven’t encountered elsewhere, choosing additions for their usefulness in sharing projects.",
+      "Continue using BakerLinks as my own publishing page while making further development more selective as I shift attention to other projects."
+    ]
   },
   {
     slug: "saske",
