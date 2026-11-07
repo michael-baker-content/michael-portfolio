@@ -35,6 +35,7 @@
     font-family: theme("fontFamily.display");
     font-variation-settings: "SOFT" 72, "WONK" 1;
     letter-spacing: -0.04em;
+    text-wrap: balance;
   }
 
   strong,
@@ -58,6 +59,11 @@
   .page-shell {
     width: min(1180px, calc(100% - 32px));
     margin-inline: auto;
+  }
+
+  /* Standalone section titles may be wider than the accompanying prose. */
+  .section-heading {
+    max-inline-size: 64rem;
   }
 
   .page-shell-narrow {

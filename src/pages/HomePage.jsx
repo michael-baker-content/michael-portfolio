@@ -49,6 +49,7 @@ export function HomePage({ content }) {
     <main id="main-content">
       <section className="relative overflow-hidden border-b border-ink/15 bg-paper py-14 md:py-20">
         <div className="page-shell relative">
+          <img className="float-right mb-4 ml-6 h-24 w-24 rounded-full object-contain md:h-32 md:w-32" src="https://avatars.githubusercontent.com/u/11700587?s=400&u=f7f93e05f8b3a7ffb5041502a1c9b7127e858f6c&v=4" alt="Michael Baker" width="400" height="400" decoding="async" />
           <p className="eyebrow">{profile.hero.eyebrow}</p>
           <h1 className="mt-5 max-w-4xl text-[clamp(2.8rem,6.5vw,5.8rem)] leading-[1.02]">{profile.hero.title}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-8 text-muted">{profile.hero.description}</p>
@@ -71,10 +72,10 @@ export function HomePage({ content }) {
       </section>
 
       <section id="work" className="page-shell scroll-mt-28 py-16 md:py-20" aria-labelledby="work-title">
-        <div className="mb-8 max-w-3xl">
+        <div className="mb-8">
           <p className="eyebrow">Selected independent projects</p>
-          <h2 id="work-title" className="mt-3 text-4xl leading-tight md:text-5xl">I adapt unclear briefs into usable systems.</h2>
-          <p className="mt-4 text-lg leading-8 text-muted">From park records and sports statistics to drawing tools, these projects explore how to make complex information and interactions usable. The case studies explain specific decisions, current limitations, and what comes next.</p>
+          <h2 id="work-title" className="section-heading mt-3 text-4xl leading-tight md:text-5xl">I adapt unclear briefs into usable systems.</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">From park records and sports statistics to drawing tools, these projects explore how to make complex information and interactions usable. The case studies explain specific decisions, current limitations, and what comes next.</p>
         </div>
         <div id="case-studies" className="scroll-mt-28" />
         <div className="grid gap-5 md:grid-cols-2">

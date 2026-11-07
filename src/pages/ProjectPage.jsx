@@ -107,7 +107,7 @@ export function ProjectPage({ content, slug }) {
       {project.sections?.length ? (
         <section className="page-shell border-t border-ink/20 py-12 md:py-16" aria-labelledby="project-story">
           <p className="eyebrow">Inside the work</p>
-          <h2 id="project-story" className="mt-3 text-4xl leading-tight md:text-5xl">Decisions and tradeoffs.</h2>
+          <h2 id="project-story" className="section-heading mt-3 text-4xl leading-tight md:text-5xl">Decisions and tradeoffs.</h2>
           <div className="mt-10 divide-y divide-ink/15">
             {project.sections.map((section, index) => (
               <article className="grid gap-4 py-8 first:pt-0 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-12" key={section.title}>

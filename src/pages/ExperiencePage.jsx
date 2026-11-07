@@ -18,7 +18,7 @@ export function ExperiencePage({ content }) {
 
       <section className="page-shell py-16" aria-labelledby="experience-areas">
         <p className="eyebrow">Areas of experience</p>
-        <h2 id="experience-areas" className="mt-3 text-4xl md:text-5xl">What the work involves.</h2>
+        <h2 id="experience-areas" className="section-heading mt-3 text-4xl md:text-5xl">What the work involves.</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {profile.lineage.beats.map((beat) => (
             <article className="editorial-card p-6 md:p-8" key={beat.from}>
@@ -32,7 +32,7 @@ export function ExperiencePage({ content }) {
       <section className="border-y border-ink/15 bg-white/60 py-16" aria-labelledby="experience-practice">
         <div className="page-shell">
           <p className="eyebrow">In practice</p>
-          <h2 id="experience-practice" className="mt-3 max-w-3xl text-4xl md:text-5xl">Publishing involves more than the page.</h2>
+          <h2 id="experience-practice" className="section-heading mt-3 text-4xl md:text-5xl">Publishing involves more than the page.</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {capabilities.filter((item) => item.category !== "Technical").map((item) => (
               <article className="border-t border-ink/25 pt-5" key={item.title}>

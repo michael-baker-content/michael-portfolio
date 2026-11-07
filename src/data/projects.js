@@ -157,7 +157,7 @@ export const projects = [
     emphasisLabel: "Active",
     title: "BakerParks",
     description: "An independent San Francisco parks guide that turns fragmented public data into searchable destinations, with source links, original photography, and paths to official services.",
-    cardImage: stockImage("photo-1500530855697-b586d89ba3ee", "A green public park with open grass, trees, and water."),
+    cardImage: { src: "https://yfhyoklpjmg7y4gg.public.blob.vercel-storage.com/media/bay-view-park-c9800e4b-853f-47a1-9e03-8e28ee6bf1be/fa4ad1990601/1280.webp", alt: "Bay View Park, San Francisco" },
     detailHref: "/projects/bakerparks",
     appHref: "https://bakerparks.vercel.app",
     repoHref: "https://github.com/michael-baker-content/sf-parks",
@@ -559,8 +559,7 @@ export const projects = [
     label: "Case study",
     emphasisLabel: "Featured",
     title: "Bakerversity",
-    description:
-      "A promising online learning platform prototype waiting for course content strong enough to justify its production tools.",
+    description: "An LMS prototype exploring responsive technical-course authoring, content management, and learner presentation.",
     cardImage: stockImage("https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1200", "People walking near a university building and graduation lawn."),
     detailHref: "/projects/bakerversity",
     appHref: "https://bakerversity.vercel.app",
@@ -568,54 +567,60 @@ export const projects = [
     tone: "gold",
     status: "Learning platform",
     timeline: "2026",
-    role: "Learning product design, frontend architecture, content editor exploration",
+    role: "Product direction, responsive interface design, course adaptation, content management, and authoring checks",
     collaborators: ["Michael Baker"],
-    tools: ["TypeScript", "React", "Next.js", "Tailwind", "KaTeX", "Tiptap"],
-    evidence: ["Course production", "Rich text editing", "Math rendering"],
+    tools: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tiptap",
+      "KaTeX",
+      "Mafs",
+      "Supabase",
+      "Clerk"
+    ],
+    evidence: [
+      "Technical lesson authoring",
+      "Draft and publication workflows",
+      "Course asset management"
+    ],
     metrics: [
       { label: "Product type", value: "LMS" },
       { label: "Editor", value: "Tiptap" },
       { label: "Math", value: "KaTeX" },
     ],
-    summary:
-      "Bakerversity is a learning-platform prototype that I still think has promise. It combines course structure, rich lesson authoring, math rendering, and a modern web stack, but it is on the backburner until I have high-quality educational content that merits the production toolset.",
-    problem:
-      "A course platform is only as persuasive as the content it supports. Without a strong course, the product risks becoming an empty container: technically interesting, but not yet proving the learning experience it was built to serve.",
-    outcome:
-      "The platform now functions as a foundation for future course production. I plan to revisit it when the educational material is ready, so the site can demonstrate not only tooling but a complete learning experience.",
+    summary: "Bakerversity is my LMS prototype for technical courses. Much of its development focuses on the authoring and management interfaces, using a complete course as material for developing presentation and workflow.",
+    problem: "Technical course content needs more than a text field. Authors need to organize lessons and assessments, combine varied explanation formats, and revise material without accidentally changing the published course.",
+    outcome: "The platform supports course organization, rich lesson editing, reusable assets, draft publication, and assessments. All planned pages of the current course contain material, including quizzes and exams. Content adaptation continues; the complete learner journey and use by other people remain untested.",
     decisions: [
-      "Use Next.js and TypeScript for a foundation that can grow from static lessons into a fuller learning product.",
-      "Explore Tiptap because lesson authoring needs structured blocks, not just plain text fields.",
-      "Include KaTeX so technical lessons can support notation, formulas, and step-by-step explanation.",
-      "Treat course structure, editing, and learner navigation as one connected product problem.",
-      "Keep the platform paused until the content is strong enough to show why the course-production tools matter.",
+      "Use generated course material to concentrate on presentation and authoring workflow while adapting the content.",
+      "Support varied technical explanations through structured editor components, including code, mathematics, directory trees, and callouts.",
+      "Give responsive layout and light/dark presentation sustained attention in the administration interface where I work.",
+      "Separate saved drafts from publication and provide revision history, lesson previews, and recovery downloads.",
+      "Keep course-author permissions separate from platform administration and learner enrollment."
     ],
     sections: [
       {
-        title: "Platform Promise",
-        body:
-          "The platform idea still feels worthwhile: courses, units, lessons, rich explanations, and technical notation can live together in a coherent learning environment. The question is not whether the toolset is interesting, but what content should prove it.",
+        "title": "Professional Context",
+        "body": "My background in online education gives me experience with course structure. I am an editor more than a writer, and a content manager more than an editor. Bakerversity lets me apply that experience to an authoring product."
       },
       {
-        title: "Course Production",
-        body:
-          "The authoring experience is the heart of Bakerversity. Tiptap, course structure, and reusable lesson patterns are meant to support serious educational content, not just decorate placeholder pages.",
+        "title": "Presentation and Interaction",
+        "body": "Technical content introduces varied layout and interaction needs. LaTeX is a particular challenge: formulas need to move gracefully between rendered notation, object selection, editable source, and a menu with multiple options. Responsive design and light/dark themes are ongoing interests in this work."
       },
       {
-        title: "Content First",
-        body:
-          "The project is waiting for content that deserves the platform. Once I have high-quality educational material, Bakerversity can show how the toolset helps illustrate, sequence, and publish it.",
+        "title": "Course Production",
+        "body": "I worked with Gemini on the structure and focus of introductory localization-engineering material, then generated content from our outline. I am adapting that material as an instructor using the platform. Codex handles much of the implementation in collaboration with me; I direct product and editorial decisions and check the interfaces."
       },
       {
-        title: "Backburner Status",
-        body:
-          "For now, Bakerversity is intentionally on the backburner. That is a product judgment: the platform should return when the learning content is ready enough to make the experience feel necessary.",
-      },
+        "title": "Current State and Limits",
+        "body": "Bakerversity is in active development alongside my other prototypes. The course is interactable, with quizzes, exams, and signed-in progress. At this stage, it demonstrates the platform’s capabilities. My checks have focused on content coherence and formatting during authoring; I have not yet completed a learner walkthrough or shown it to other people."
+      }
     ],
     nextSteps: [
-      "Finish developing a strong educational content package that can properly demonstrate the platform.",
-      "Revisit Bakerversity once the content is ready to be illustrated, sequenced, and published through the course-production toolset.",
-      "Use the first complete course to decide which platform features matter most: authoring, learner progress, publishing, or course discovery.",
+      "Continue interpreting, adapting, and reviewing the course material.",
+      "Review the course from a learner’s perspective and gather feedback when it is ready to be shared.",
+      "Use continued course production to guide further authoring and presentation improvements."
     ],
   },
   {
@@ -838,7 +843,7 @@ export const projects = [
     label: "Case study",
     title: "GitHub Repo Journal",
     description:
-      "An Astro blog for writing about recent GitHub repos, creative coding experiments, and technical explorations.",
+      "A journal of independent projects: what I am building, the decisions behind it, and what I want to explore next.",
     cardImage: stockImage("photo-1499750310107-5fef28a66643", "A laptop and notebook set up for writing technical notes."),
     detailHref: "/projects/github-repo-journal",
     appHref: "https://michael-baker-content.github.io/",
@@ -846,54 +851,54 @@ export const projects = [
     tone: "gold",
     status: "Public blog",
     timeline: "2026",
-    role: "Writing system, static-site design, technical documentation",
+    role: "Writing, editorial direction, and publishing design",
     collaborators: ["Michael Baker"],
-    tools: ["Astro", "React", "KaTeX", "p5.js", "GitHub Pages"],
-    evidence: ["Repo writeups", "Static publishing", "Technical experiments"],
+    tools: ["Astro", "MDX", "React", "KaTeX", "p5.js", "GitHub Pages"],
+    evidence: ["Published field notes", "Project retrospectives", "Search and tags"],
     metrics: [
       { label: "Framework", value: "Astro" },
       { label: "Host", value: "GitHub Pages" },
-      { label: "Content", value: "Repo notes" },
+      { label: "Content", value: "Field notes" },
     ],
     summary:
-      "GitHub Repo Journal is a static blog for turning repository activity into a readable body of work. It gives recent projects a narrative layer: what sparked the build, how it works, what decisions mattered, and where the experiment could go next.",
+      "GitHub Repo Journal brings my writing experience into my independent projects. The site pairs project overviews with field notes about the work as it happens: returning to a dormant idea, refining an interface, or discovering what a dataset leaves out.",
     problem:
-      "A GitHub profile can show activity, but it rarely explains intent. Without writing, prototypes can look disconnected even when they are part of a larger learning arc, product idea, or technical exploration.",
+      "A repository holds the code, but understanding a project also takes context: what I wanted to explore, why I chose an approach, and what I learned. That explanation needs room beyond a README or portfolio card.",
     outcome:
-      "The Astro site connects repositories to essays, notes, technical examples, and creative experiments. It turns code history into something a reader can follow.",
+      "The public site brings together project pages and a searchable, tagged journal. Published posts cover projects including BakerLinks, Baker Parks, Sketchlet, and this portfolio, connecting the finished overview with the decisions and unfinished questions behind it.",
     decisions: [
-      "Use Astro because the site is content-first but still has room for React components and interactive experiments.",
-      "Support KaTeX and p5.js so technical explanation and creative coding can live in the same publishing system.",
-      "Treat repo writeups as a bridge between code history, portfolio evidence, and public learning.",
-      "Keep the site deployable through GitHub Pages so publishing stays lightweight.",
-      "Use posts to explain project intent, tradeoffs, and lessons that a repository alone cannot show.",
+      "Use Astro and MDX to combine written explanations with embedded components.",
+      "Support equations, interactive math figures, live sketches, and music-code embeds for different subjects.",
+      "Connect project pages, related posts, and source repositories.",
+      "Publish through GitHub Actions to GitHub Pages.",
+      "Offer search, topic tags, and RSS as ways to find and follow the writing.",
     ],
     sections: [
       {
-        title: "Narrative Layer",
+        title: "Writing about decisions",
         body:
-          "The blog turns repository activity into a readable body of work. It gives the reader context for why a project exists, what changed during the build, and what kind of judgment the project demonstrates.",
+          "The BakerLinks writing follows the project from a focused first version to a return to its profile editor. The November 7 field note explains the appeal of customization, the role of a preview, and the small obstacles that make managing a page frustrating. It also distinguishes my own use from evidence about how the tools work for other people.",
       },
       {
-        title: "Content Flexibility",
+        title: "Finding the story in a build",
         body:
-          "Astro, React, KaTeX, and p5.js support a broad range of post types: technical notes, project retrospectives, math-heavy explanations, and interactive sketches. That flexibility matters because the projects are not all the same kind of work.",
+          "The posts approach each project through a specific question. Baker Parks asks what public data leaves out; Sketchlet considers what it takes to invite other people into a drawing experience. These angles give the writing a purpose beyond listing features.",
       },
       {
-        title: "Portfolio Connection",
+        title: "Connecting projects and posts",
         body:
-          "The blog can carry the deeper reflection that would overcrowd a portfolio card. Case studies can stay focused, while blog posts explain process, challenges, and what I learned from building.",
+          "Project pages give readers an overview, while field notes have room for a narrower decision or a return to earlier work. Repository links connect the writing to the code. Together, these formats let me explain both what a project does and how my thinking changes as I work on it.",
       },
       {
-        title: "Readable Work",
+        title: "Supporting continued reading",
         body:
-          "GitHub Repo Journal shows that the work is not only being built; it is being interpreted. That combination of making and explaining is central to the larger portfolio.",
+          "The journal offers search and topic tags so readers can follow an interest across projects. The Astro and MDX foundation also leaves room for code, equations, and interactive examples when they help explain a subject.",
       },
     ],
     nextSteps: [
-      "Add reciprocal links between portfolio case studies and their deeper blog posts.",
-      "Define a repeatable post format for repo retrospectives: spark, build, challenge, decision, next step.",
-      "Add screenshots, embeds, or code examples where the writing needs more concrete proof.",
+      "Continue linking portfolio case studies with field notes about specific decisions and later revisions.",
+      "Keep the writing specific about my contribution, AI collaboration, and what has or has not been tested.",
+      "Choose examples that help readers understand the work: a screenshot, a focused code excerpt, or an interactive demonstration.",
     ],
   },
   {
