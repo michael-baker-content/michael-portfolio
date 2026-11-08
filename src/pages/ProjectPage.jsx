@@ -101,7 +101,7 @@ export function ProjectPage({ content, slug }) {
 
       {project.screenshots?.length ? (
         <section className="page-shell border-t border-ink/15 py-12" aria-labelledby="project-screenshots">
-          <p className="eyebrow">From the live site</p>
+          <p className="eyebrow">Project views</p>
           <h2 id="project-screenshots" className="mt-3 text-3xl">A closer look.</h2>
           <div className="mt-8 grid gap-10">
             {project.screenshots.map((shot) => (

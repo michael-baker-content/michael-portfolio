@@ -1,8 +1,8 @@
 // Curated navigation labels, separate from project status and display priority.
 export const capabilityLabels = {
-  data: "Data modeling and analysis",
-  interaction: "Interaction and interface design",
-  content: "Content and publishing systems",
+  data: "Data and APIs",
+  interaction: "Design and interaction",
+  content: "Content and publishing",
 };
 
 const projectCapabilities = {

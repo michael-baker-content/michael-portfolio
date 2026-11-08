@@ -11,10 +11,10 @@ export const profile = {
     { label: "Case studies", href: "/case-studies" },
   ],
   hero: {
-    eyebrow: "Content experience. Independent projects.",
-    title: "Content, publishing, and useful web tools.",
+    eyebrow: "Michael Baker · Websites, tools, and experiments",
+    title: "A collection of things I’m building.",
     description:
-      "I’m Michael Baker. I bring 15+ years of experience in web production, technical publishing, and online education to building websites and applications.",
+      "I make websites that follow my curiosity—from drawing games to park guides and publishing tools. I enjoy connecting the pieces: exploring databases and APIs, building interfaces, and making the tools behind them work.",
     imageAlt:
       "A polished paper-craft workspace with interface elements, project cards, and soft architectural details.",
   },

@@ -53,7 +53,11 @@ export function HomePage({ content }) {
           <p className="eyebrow">{profile.hero.eyebrow}</p>
           <h1 className="mt-5 max-w-4xl text-[clamp(2.8rem,6.5vw,5.8rem)] leading-[1.02]">{profile.hero.title}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-8 text-muted">{profile.hero.description}</p>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">My experience organizing and publishing information now extends to building the tools people use to work with it. My projects turn public records, statistics, rules, and creative tasks into focused interfaces.</p>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">Take a look around. Something here might spark an idea we could work on together.</p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link className="editorial-link" href="/#work">Explore the projects</Link>
+            <Link className="editorial-link" href="/#contact">Get in touch</Link>
+          </div>
           <div className="mt-9 grid gap-4 md:grid-cols-2">
             <article className="editorial-card border-t-4 border-t-portfolioBlue p-6 md:p-8">
               <p className="eyebrow">Professional experience</p>

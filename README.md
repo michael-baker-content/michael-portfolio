@@ -10,7 +10,7 @@ A personal portfolio connecting professional experience in web production, techn
 - **Selected projects:** Sketchlet, BakerLinks, Baker Parks / SF Parks Explorer, and Bakerversity.
 - **Case studies:** project context, responsibilities, implementation decisions, current results, limitations, and next steps, with application and repository links where available.
 
-The portfolio is actively evolving. Eleven of the thirteen listed case studies include product screenshots; Mike's List and Notion Archive Cleaner still use stock card imagery. Further evidence collection will focus on specific workflows and decisions. The deployed site may differ from local changes awaiting publication.
+The portfolio is actively evolving. Twelve of the thirteen listed case studies include product screenshots, including subpages, open menus, and detail panels. Making Tools, Daily Games, Mike’s List, and Notion Archive Cleaner use illustrative Unsplash card images; those images are separate from product evidence. Mike’s List is excluded from the current screenshot expansion. The deployed site may differ from local changes awaiting publication.
 
 ## How it works
 
@@ -68,7 +68,7 @@ Plain Vite serves the frontend but does not run `api/content.js`.
 
 ## Content and project structure
 
-Capability labels provide a second way to browse projects without changing their curated order. Edit the slug mappings in `src/data/projectCapabilities.js` to group work under data modeling and analysis, interaction and interface design, or content and publishing systems. A project can belong to multiple groups. These editorial navigation labels are maintained in code rather than the content dashboard.
+Three shared themes provide a second way to browse projects without changing their curated order: Data and APIs, Design and interaction, and Content and publishing. Edit the slug mappings in `src/data/projectCapabilities.js` to group the work. A project can belong to multiple themes. These editorial navigation labels are maintained in code rather than the content dashboard. Cards show these themes instead of project-specific feature tags; detailed feature and tool terms remain searchable.
 
 
 | Location | Responsibility |
@@ -76,7 +76,8 @@ Capability labels provide a second way to browse projects without changing their
 | `src/App.jsx` | Routes and runtime content loading. |
 | `src/pages/HomePage.jsx` | Introduction, selected projects, and contact form. |
 | `src/pages/ExperiencePage.jsx` | Professional background and responsibilities. |
-| `src/pages/CaseStudiesPage.jsx` | Project search, filters, and sorting. |
+| `src/pages/CaseStudiesPage.jsx` | Capability chips, search, sorting, and browser-history state. |
+| `src/lib/projectFilters.js` | Search matching, capability filtering, ordering, and URL parameters. |
 | `src/pages/ProjectPage.jsx` | Shared case-study detail layout. |
 | `src/pages/AdminPage.jsx` | Owner content editor. |
 | `src/data/profile.js` | Profile copy, experience content, links, and contact configuration. |
@@ -91,6 +92,14 @@ Capability labels provide a second way to browse projects without changing their
 
 Public routes include `/`, `/experience`, `/case-studies`, and `/projects/:slug`. The former `/taste` URL also opens Experience. The editor is at `/admin`.
 
+### Browsing projects
+
+The case-study index keeps three controls: one capability selection, search, and a sort menu. **Recommended** uses ascending project priority; **A–Z** sorts by title. Emphasis and timeline are not visitor filters. Recently updated sorting is deferred until projects have meaningful update dates.
+
+Search matches all entered words, in any order, across the title, description, category, status, role, tools, evidence, and capability labels. Search and the selected capability must both match. Clear filters removes the search and capability selection while retaining the sort order.
+
+Selections are stored in the URL: `capability=data|interaction|content`, `q=<search>`, and `sort=title`. Defaults are omitted. Reload and browser Back restore selections; typing replaces the current history entry instead of adding an entry for every character. Unknown capability or sort values fall back to All projects and Recommended.
+
 ### Editing case studies
 
 Project records support summaries, problems, outcomes, roles, timelines, collaborators, tools, decisions, narrative sections, next steps, optional metrics, and application/repository links.
@@ -99,9 +108,17 @@ Project records support summaries, problems, outcomes, roles, timelines, collabo
 - `visibility: "hidden"` removes it from lists **but leaves its direct route accessible**. It is not a privacy control.
 - `priority` determines default order; lower numbers appear first. The homepage initially shows the first four listed projects.
 - `stage` and `emphasisLabel` describe project status without changing priority.
-- `category` supports filtering; `cardImage` supplies the card image and alternative text.
+- `category` provides searchable subject context; `cardImage` supplies the card image and alternative text.
 
 The hidden `/projects/template` entry provides a drafting pattern. Related applications have their own repositories; their code should not be mixed into this portfolio.
+
+### Project images
+
+Use `cardImage` for the card’s feature image and `screenshots` for the case-study gallery. Each screenshot records `src`, `alt`, `caption`, `href`, and `capturedOn` (YYYY-MM-DD). Put local images in `public/assets/projects/` and reference them as `/assets/projects/<filename>`.
+
+Prefer readable views that demonstrate a decision: a tool palette, roster, lesson, or detail panel. A source-page link may require opening a menu to reproduce the captured state. The gallery label is “Project views”; captions must distinguish any future local or archival example from a deployed interface. Screenshots show interfaces, not measured user outcomes.
+
+See [image sources and capture notes](docs/project-images.md) for selected Unsplash sources and remaining evidence gaps.
 
 ### Saved content versus repository defaults
 
@@ -121,7 +138,7 @@ By default, this reads `https://michaelbaker.vercel.app/api/content` and writes 
 npm run content:pull -- https://your-preview-url.vercel.app/api/content content-snapshots/preview-content.json
 ```
 
-Review snapshots before incorporating them into repository defaults.
+Review snapshots before incorporating them into repository defaults. Nonempty saved screenshot arrays and saved card images can override repository additions or replacements; image fallback rules do not synchronize every editorial choice. Reconcile only the intended project fields, preserving unrelated dashboard edits. Keep content snapshots out of the release commit.
 
 ## Deployment
 

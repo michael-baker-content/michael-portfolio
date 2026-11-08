@@ -16,7 +16,7 @@ export const projects = [
     description:
       "My active portfolio, bringing professional experience, independent projects, and the thinking behind the work into one place.",
     cardImage: {"src": "/assets/projects/portfolio.jpg", "alt": "The live portfolio homepage."},
-    screenshots: [{"src": "/assets/projects/portfolio.jpg", "alt": "The live portfolio homepage.", "caption": "The live portfolio homepage.", "href": "https://michaelbaker.vercel.app/", "capturedOn": "2026-11-07"}],
+    screenshots: [{"src":"/assets/projects/portfolio.jpg","alt":"The live portfolio homepage.","caption":"The live portfolio homepage.","href":"https://michaelbaker.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/portfolio-capability-filter.jpg","alt":"The project index with Interaction and interface design selected as the capability filter.","caption":"The project index with Interaction and interface design selected as the capability filter.","href":"https://michaelbaker.vercel.app/case-studies","capturedOn":"2026-11-07"}],
     detailHref: "/projects/portfolio",
     repoHref: "https://github.com/michael-baker-content/michael-portfolio",
     tone: "gold",
@@ -69,83 +69,111 @@ export const projects = [
     ],
   },
   {
-    slug: "sketchlet",
-    visibility: "listed",
-    stage: "featured",
-    priority: 10,
-    category: "Creative tool",
-    label: "Case study",
-    emphasisLabel: "Active",
-    title: "Sketchlet",
-    description:
-      "A daily drawing playground shaped by practical decisions about draft recovery, touch input, practice, and publication.",
-    cardImage: {"src": "/assets/projects/sketchlet.jpg", "alt": "Sketchlet’s current homepage introduces three timed drawing rounds."},
-    screenshots: [{"src": "/assets/projects/sketchlet.jpg", "alt": "Sketchlet’s current homepage introduces three timed drawing rounds.", "caption": "Sketchlet’s current homepage introduces three timed drawing rounds.", "href": "https://sketchlet.app/", "capturedOn": "2026-11-07"}],
-    detailHref: "/projects/sketchlet",
-    appHref: "https://sketchlet.app",
-    repoHref: "https://github.com/michael-baker-content/sketchlet",
-    tone: "coral",
-    status: "Public site · active development",
-    timeline: "October 2026–present",
-    role: "Product direction, drawing-tool design, and implementation",
-    collaborators: ["Michael Baker"],
-    tools: ["HTML", "CSS", "JavaScript", "Canvas API", "Vercel", "Neon", "Clerk"],
-    evidence: ["Draft recovery", "Touch input", "Practice canvas", "Explicit publication"],
-    metrics: [],
-    summary:
-      "Sketchlet is a daily drawing playground built around one shared prompt and many possible interpretations. Inspired by the repeatable rhythm of Wordle, it gives people a reason to draw, a place to share their work, and something new to return to tomorrow. The work focuses on making that small creative ritual dependable: preserving an unfinished canvas, adapting tools to touch, and keeping practice, publication, and sharing distinct.",
-    problem:
-      "A daily drawing game needs expressive tools without asking visitors to learn a professional art application. The tools also need predictable behavior: a finger should not hide the mark, an interrupted session should not lose its work, and saving an image should not accidentally publish it.",
-    outcome:
-      "Sketchlet is a public drawing site with a daily prompt, canvas tools, a gallery, and a published drawing-tool guide with access to free draw. The implementation includes date-specific draft recovery and separate download, submission, and sharing actions. Optional sign-in is publicly advertised; full account recovery still needs production verification. Group experiences remain in development.",
-    decisions: [
-      "Keep each draft attached to its prompt date and distinguish a fresh visit, an unfinished drawing, and a completed submission.",
-      "Offset finger input so the mark remains visible, while keeping mouse and pen input directly aligned.",
-      "Give practice a separate persistent canvas and explain tool behavior in a dedicated drawing guide.",
-      "Separate downloading an image from publishing a final entry, with confirmation before gallery submission.",
-      "Allow guest participation and develop account continuity before expanding into group drawing experiences.",
+    "slug": "sketchlet",
+    "visibility": "listed",
+    "stage": "featured",
+    "priority": 10,
+    "category": "Creative tool",
+    "label": "Case study",
+    "emphasisLabel": "Active",
+    "title": "Sketchlet",
+    "description": "A daily drawing playground with evolving timed prompts and an untimed mode for drawing at your own pace.",
+    "cardImage": {
+      "src": "/assets/projects/sketchlet.jpg",
+      "alt": "Sketchlet’s current homepage introduces three timed drawing rounds."
+    },
+    "screenshots": [
+      {
+        "src": "/assets/projects/sketchlet.jpg",
+        "alt": "Sketchlet’s current homepage introduces three timed drawing rounds.",
+        "caption": "Sketchlet’s current homepage introduces three timed drawing rounds.",
+        "href": "https://sketchlet.app/",
+        "capturedOn": "2026-11-07"
+      },
+      {
+        "src": "/assets/projects/sketchlet-color-menu.jpg",
+        "alt": "Free draw with the foreground palette open beside the canvas.",
+        "caption": "Free draw with the foreground palette open beside the canvas.",
+        "href": "https://sketchlet.app/free-draw",
+        "capturedOn": "2026-11-07"
+      },
+      {
+        "src": "/assets/projects/sketchlet-phone-palette.jpg",
+        "alt": "The foreground palette at a 390-pixel phone viewport; the colors open in a separate dialog.",
+        "caption": "The foreground palette at a 390-pixel phone viewport; the colors open in a separate dialog.",
+        "href": "https://sketchlet.app/free-draw",
+        "capturedOn": "2026-11-07"
+      },
+      {
+        "src": "/assets/projects/sketchlet-trio-sharing.jpg",
+        "alt": "Michael Baker’s published trio expanded with drawing-link and image-sharing actions.",
+        "caption": "Michael Baker’s published trio expanded with drawing-link and image-sharing actions.",
+        "href": "https://sketchlet.app/timed-gallery",
+        "capturedOn": "2026-11-07"
+      }
     ],
-    sections: [
-      {
-        title: "Returning to an unfinished drawing",
-        body:
-          "The daily rhythm creates three different entry states. In the implementation, a fresh day begins with instructions, an unfinished drawing resumes in the editor, and a completed day opens the submitted work. Drafts remain attached to their original prompt date, so yesterday’s unfinished canvas does not become today’s entry. Recovery and navigation are part of making a short daily visit dependable.",
-      },
-      {
-        title: "Drawing with a finger",
-        body:
-          "A finger covers the mark in a way a mouse pointer does not. Sketchlet’s input handling offsets finger drawing 24 screen pixels upward and provides space below the canvas to reach its bottom edge. Mouse and pen remain directly aligned. Compact controls and full-screen drawing make room for the canvas, while drawing state and undo history survive layout changes. Real-device testing is the next step in evaluating these touch adaptations.",
-      },
-      {
-        title: "A separate place to practice",
-        body:
-          "One final submission per day gives the game a boundary without ending experimentation. Free draw uses the same tools in a separate persistent canvas. The implementation lets a person start blank or continue from a flattened copy of a submitted drawing without changing the gallery original. A dedicated Info page explains practical tool behavior, including translucent marker strokes and why gaps in a boundary allow fill to escape.",
-      },
-      {
-        title: "Making publication explicit",
-        body:
-          "Downloading a PNG keeps a local image. Saving to the gallery publishes the day’s final entry after confirmation. The sharing code supports a link back to the drawing or an artwork-focused image card with the creator, prompt, and date. Link previews use the Sketchlet logo; image cards omit ratings. A download fallback supports browsers that cannot copy images. These separate actions make the destination of a drawing explicit.",
-      },
-      {
-        title: "Continuity before community",
-        body:
-          "Guests can participate without registering, but browser identity does not automatically reconnect their work on another device or domain. Account development includes reviewing guest drawings and resolving conflicts when two drawings belong to the same day. Sign-in is advertised publicly, while recovery and linking flows still require production verification. Group membership is still in development; shared drawing feeds and group administration are planned.",
-      },
-      {
-        title: "Current limits",
-        body:
-          "The case study describes the public product and ongoing implementation work. Account recovery and linking still need end-to-end checks on the live site. Short visits, creative confidence, and repeat participation are design goals; their effect on users has not yet been measured.",
-      },
+    "detailHref": "/projects/sketchlet",
+    "appHref": "https://sketchlet.app",
+    "repoHref": "https://github.com/michael-baker-content/sketchlet",
+    "tone": "coral",
+    "status": "Public site · active development",
+    "timeline": "October 2026–present",
+    "role": "Product direction and interaction refinement; implementation with Codex",
+    "collaborators": [
+      "Michael Baker",
+      "Codex"
     ],
-    nextSteps: [
-      "Test account recovery and guest-drawing linking end to end on the live site.",
-      "Complete and verify group membership, then build group drawing views and dedicated admin oversight on that foundation.",
-      "Check draft recovery and touch behavior on real devices, including bottom-edge access and returning from full-screen drawing.",
-      "Observe new visitors using the guide and practice canvas, and record where tool behavior or publication choices cause confusion.",
-      "Evaluate whether visitors understand the difference between downloading, submitting, and sharing a drawing.",
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Canvas API",
+      "Vercel",
+      "Neon",
+      "Clerk"
     ],
-  },
-  {
+    "evidence": [
+      "Expanding timed prompts",
+      "Simpler drawing controls",
+      "Separate practice canvas"
+    ],
+    "metrics": [],
+    "summary": "I’m developing Sketchlet to find what makes a small daily drawing game fun. Timed mode reveals a more complex prompt across three rounds, giving people a choice: build on their drawing or start over. Alongside that experiment, I’m simplifying the controls and refining how the tools feel on the canvas. I direct and evaluate the experience with Codex handling much of the code.",
+    "problem": "A timer gives a drawing session a clear boundary, but it also asks newcomers to learn the tools under pressure. I want people to spend their time responding to an idea rather than searching menus or working around a brush.",
+    "outcome": "Sketchlet offers three three-minute rounds, an untimed daily prompt, and a separate free-draw canvas. The tools are in their best state so far in my own use, but I’m still exploring what would make the game worth returning to. Repeat participation and the experience for new users remain untested. Unfinished daily drawings stay attached to their prompt date, and free draw saves separately on the device. Downloading an image and publishing a final gallery entry remain separate actions.",
+    "decisions": [
+      "Reveal the prompt in stages so each round can invite a new idea or a change of direction.",
+      "Simplify color selection and put frequently used drawing controls within easier reach.",
+      "Keep untimed drawing and free draw available alongside the timed game, with an explicit choice to publish."
+    ],
+    "sections": [
+      {
+        "title": "Keep the next prompt a surprise",
+        "body": "Untimed drawings can take ten seconds or much longer. Timed mode gives everyone the same allowance while revealing a subject, an action, and another twist. I want to preserve that surprise. Each reveal can change the whole composition, so people can keep their canvas or start fresh. Giving later rounds more time is an idea I’m considering; the current game uses three minutes for every round."
+      },
+      {
+        "title": "Make the tools easier to find and use",
+        "body": "I simplified the color menus and rearranged the controls around the tools I use most. The brush behavior needs the same attention. Moving from three sizes to a slider exposed sizes where spray stopped working; at other points its particles looked more like pellets. Refining those details changes the drawing experience. Spray still does not build up continuously during a sustained press, and fill can struggle with complex boundaries. I also replaced a finger offset that was difficult for me to coordinate with a direct-contact guide, which I haven’t tried yet."
+      },
+      {
+        "title": "A separate place to practice",
+        "body": "I think newcomers should probably try untimed drawing first, even though I’m highlighting timed mode because it’s new. Free draw uses the same tools on a separate canvas that saves on the device. A person can start blank or continue from a flattened copy of a submitted drawing without changing the gallery original. The drawing guide explains the tools, but the right path from first visit to comfortable drawing is still something to explore."
+      },
+      {
+        "title": "Returning to an unfinished drawing",
+        "body": "The daily rhythm creates three different entry states. In the implementation, a fresh day begins with instructions, an unfinished drawing resumes in the editor, and a completed day opens the submitted work. Drafts remain attached to their original prompt date, so yesterday’s unfinished canvas does not become today’s entry. Recovery and navigation are part of making a short daily visit dependable."
+      },
+      {
+        "title": "Making publication explicit",
+        "body": "Downloading a PNG keeps a local image. Saving to the gallery publishes the day’s final entry after confirmation. The sharing code supports a link back to the drawing or an artwork-focused image card with the creator, prompt, and date. Link previews use the Sketchlet logo; image cards omit ratings. A download fallback supports browsers that cannot copy images. These separate actions make the destination of a drawing explicit."
+      }
+    ],
+    "nextSteps": [
+      "Refine the drawing experience as development resumes; specific tool priorities remain open.",
+      "Try the new touch guide and test drawing with a trackpad.",
+      "Explore onboarding and round lengths while preserving the surprise of each prompt reveal."
+    ]
+  },  {
     slug: "bakerparks",
     visibility: "listed",
     stage: "featured",
@@ -156,7 +184,7 @@ export const projects = [
     title: "Baker Parks",
     description: "An independent San Francisco parks guide that turns fragmented public data into searchable destinations, with source links, original photography, and paths to official services.",
     cardImage: {"src": "/assets/projects/baker-parks.jpg", "alt": "Park search and activity choices on the Baker Parks homepage."},
-    screenshots: [{"src": "/assets/projects/baker-parks.jpg", "alt": "Park search and activity choices on the Baker Parks homepage.", "caption": "Park search and activity choices on the Baker Parks homepage.", "href": "https://bakerparks.vercel.app/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/baker-parks-explore.jpg", "alt": "Destination filters alongside a map of San Francisco parks.", "caption": "Destination filters alongside a map of San Francisco parks.", "href": "https://bakerparks.vercel.app/explore/?view=map", "capturedOn": "2026-11-07"}],
+    screenshots: [{"src":"/assets/projects/baker-parks.jpg","alt":"Park search and activity choices on the Baker Parks homepage.","caption":"Park search and activity choices on the Baker Parks homepage.","href":"https://bakerparks.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/baker-parks-explore.jpg","alt":"Destination filters alongside a map of San Francisco parks.","caption":"Destination filters alongside a map of San Francisco parks.","href":"https://bakerparks.vercel.app/explore/?view=map","capturedOn":"2026-11-07"},{"src":"/assets/projects/baker-parks-destination.jpg","alt":"The 900 Innes destination page combines page navigation, location context, and original photography.","caption":"The 900 Innes destination page combines page navigation, location context, and original photography.","href":"https://bakerparks.vercel.app/parks/900-innes/","capturedOn":"2026-11-07"},{"src":"/assets/projects/baker-parks-transit.jpg","alt":"Destination-level transit information includes nearby stops, scheduled-data context, and official-service links.","caption":"Destination-level transit information includes nearby stops, scheduled-data context, and official-service links.","href":"https://bakerparks.vercel.app/parks/900-innes/#transit","capturedOn":"2026-11-07"}],
     detailHref: "/projects/bakerparks",
     appHref: "https://bakerparks.vercel.app",
     repoHref: "https://github.com/michael-baker-content/sf-parks",
@@ -235,7 +263,7 @@ export const projects = [
     title: "Mike's List",
     description:
       "A local discovery experiment moving toward an information-rich map of venues hosting entertainment today, this week, or another selected period.",
-    cardImage: stockImage("photo-1501386761578-eac5c94b800a", "A live music crowd facing a brightly lit stage."),
+    cardImage: {"src":"https://images.unsplash.com/photo-1783979719753-bf9b21f7a8e4?auto=format&fit=crop&w=1200&h=750&q=80","alt":"An empty tiki lounge with bamboo walls, warm lamps, and tropical-patterned seating."},
     detailHref: "/projects/mikeslist",
     repoHref: "https://github.com/michael-baker-content/mikeslist",
     tone: "spotlight",
@@ -301,8 +329,8 @@ export const projects = [
     title: "Daily Games",
     description:
       "Sketchlet and Jacklet: two approaches to a daily game, from an open drawing prompt to a shared blackjack challenge.",
-    cardImage: {"src": "/assets/projects/jacklet.jpg", "alt": "A daily Jacklet hand, with score and strikes visible."},
-    screenshots: [{"src": "/assets/projects/jacklet.jpg", "alt": "A daily Jacklet hand, with score and strikes visible.", "caption": "A daily Jacklet hand, with score and strikes visible.", "href": "https://jacklet.vercel.app/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/sketchlet.jpg", "alt": "Sketchlet’s daily invitation through drawing.", "caption": "Sketchlet’s daily invitation through drawing.", "href": "https://sketchlet.app/", "capturedOn": "2026-11-07"}],
+    cardImage: {"src":"https://images.unsplash.com/photo-1673892139721-e4f7cda4ba21?auto=format&fit=crop&w=1200&q=80","alt":"Playing cards and dice arranged together."},
+    screenshots: [{"src":"/assets/projects/jacklet.jpg","alt":"A daily Jacklet hand, with score and strikes visible.","caption":"A daily Jacklet hand, with score and strikes visible.","href":"https://jacklet.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/sketchlet.jpg","alt":"Sketchlet’s daily invitation through drawing.","caption":"Sketchlet’s daily invitation through drawing.","href":"https://sketchlet.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/jacklet-rules.jpg","alt":"Jacklet’s rules explain strikes, scoring, jokers, and the shared daily reset.","caption":"Jacklet’s rules explain strikes, scoring, jokers, and the shared daily reset.","href":"https://jacklet.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/sketchlet-trio-sharing.jpg","alt":"Sketchlet’s expanded trio shows three responses to a progressively expanded daily prompt.","caption":"Sketchlet’s expanded trio shows three responses to a progressively expanded daily prompt.","href":"https://sketchlet.app/timed-gallery","capturedOn":"2026-11-07"}],
     detailHref: "/projects/daily-games",
     relatedLinks: [
       { label: "Play Sketchlet", href: "https://sketchlet.app" },
@@ -368,8 +396,8 @@ export const projects = [
     title: "Making Tools",
     description:
       "A grouped case study about solving complex hobby problems with focused helper apps, from fantasy stats to RPG interfaces.",
-    cardImage: {"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball leaderboard: a tool built around a personal hobby."},
-    screenshots: [{"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball leaderboard: a tool built around a personal hobby.", "caption": "The baseball leaderboard: a tool built around a personal hobby.", "href": "https://michael-baker-content.github.io/fantasy-baseball/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/cine2helper-results.jpg", "alt": "Cine2Helper film results with person filters, sorting, and overlapping win conditions.", "caption": "Film results connect filtering and sorting with related game conditions.", "href": "https://cine2helper.vercel.app/", "capturedOn": "2026-11-07"}],
+    cardImage: {"src":"https://images.unsplash.com/photo-1781445561924-416a43d56adb?auto=format&fit=crop&w=1200&h=750&q=80","alt":"A colorful collage workspace with cut paper, scissors, and craft materials."},
+    screenshots: [{"src":"/assets/projects/fantasy-baseball-roster.jpg","alt":"An owner roster turns a league’s total score into inspectable player statistics.","caption":"An owner roster turns a league’s total score into inspectable player statistics.","href":"https://michael-baker-content.github.io/fantasy-baseball/?owner=Baker","capturedOn":"2026-11-07"},{"src":"/assets/projects/saske-medicine.jpg","alt":"A character-specific Medicine panel brings a recurring tabletop workflow into one view.","caption":"A character-specific Medicine panel brings a recurring tabletop workflow into one view.","href":"https://michael-baker-content.github.io/saske/","capturedOn":"2026-11-07"},{"src":"/assets/projects/cine2helper-film-details.jpg","alt":"Film credits provide supporting detail within a focused game-helper lookup.","caption":"Film credits provide supporting detail within a focused game-helper lookup.","href":"https://cine2helper.vercel.app/","capturedOn":"2026-11-07"}],
     detailHref: "/projects/making-tools",
     tone: "gold",
     status: "Toolmaking series",
@@ -493,8 +521,8 @@ export const projects = [
     title: "Fantasy Sports Dashboards",
     description:
       "Fantasy league dashboards that grew from basketball into baseball, with a hosting journey from Railway through PythonAnywhere to GitHub Pages.",
-    cardImage: {"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball dashboard’s saved 2026 standings and category points."},
-    screenshots: [{"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball dashboard’s saved 2026 standings and category points.", "caption": "The baseball dashboard’s saved 2026 standings and category points.", "href": "https://michael-baker-content.github.io/fantasy-baseball/", "capturedOn": "2026-11-07"}],
+    cardImage: {"src":"/assets/projects/fantasy-baseball-roster.jpg","alt":"Team Baker’s roster submenu with individual player statistics."},
+    screenshots: [{"src":"/assets/projects/fantasy-baseball.jpg","alt":"The baseball dashboard’s saved 2026 standings and category points.","caption":"The baseball dashboard’s saved 2026 standings and category points.","href":"https://michael-baker-content.github.io/fantasy-baseball/","capturedOn":"2026-11-07"},{"src":"/assets/projects/fantasy-baseball-roster.jpg","alt":"Team Baker’s roster breaks the saved league result into individual player statistics.","caption":"Team Baker’s roster breaks the saved league result into individual player statistics.","href":"https://michael-baker-content.github.io/fantasy-baseball/?owner=Baker","capturedOn":"2026-11-07"},{"src":"/assets/projects/fantasy-baseball-scoring.jpg","alt":"The leaderboard explanation identifies category points and which statistics favor lower values.","caption":"The leaderboard explanation identifies category points and which statistics favor lower values.","href":"https://michael-baker-content.github.io/fantasy-baseball/","capturedOn":"2026-11-07"}],
     detailHref: "/projects/nba-roto-tracker",
     appHref: "https://michael-baker-content.github.io/fantasy-baseball/",
     repoHref: "https://github.com/michael-baker-content/fantasy-baseball",
@@ -563,8 +591,8 @@ export const projects = [
     title: "Movie Database Project",
     description:
       "A focused movie lookup experience that turns a large entertainment database into fast, useful decision support.",
-    cardImage: {"src": "/assets/projects/cine2helper.jpg", "alt": "Cine2Helper homepage introducing film connections and win conditions."},
-    screenshots: [{"src": "/assets/projects/cine2helper.jpg", "alt": "Cine2Helper homepage introducing film connections and win conditions.", "caption": "The movie companion introduces browsing by game win conditions.", "href": "https://cine2helper.vercel.app/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/cine2helper-results.jpg", "alt": "Cine2Helper film results with person filters, sorting, and overlapping win conditions.", "caption": "Film results connect filtering and sorting with related game conditions.", "href": "https://cine2helper.vercel.app/", "capturedOn": "2026-11-07"}],
+    cardImage: {"src":"/assets/projects/cine2helper-film-details.jpg","alt":"Cine2Helper’s film-details overlay with cast and crew information."},
+    screenshots: [{"src":"/assets/projects/cine2helper.jpg","alt":"Cine2Helper homepage introducing film connections and win conditions.","caption":"The movie companion introduces browsing by game win conditions.","href":"https://cine2helper.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/cine2helper-results.jpg","alt":"Cine2Helper film results with person filters, sorting, and overlapping win conditions.","caption":"Film results connect filtering and sorting with related game conditions.","href":"https://cine2helper.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/cine2helper-film-details.jpg","alt":"A film-information overlay exposes cast and crew without leaving the condition-results view.","caption":"A film-information overlay exposes cast and crew without leaving the condition-results view.","href":"https://cine2helper.vercel.app/","capturedOn":"2026-11-07"}],
     appHref: "https://cine2helper.vercel.app/",
     detailHref: "/projects/cine2helper",
     repoHref: "https://github.com/michael-baker-content/cine2helper",
@@ -632,7 +660,7 @@ export const projects = [
     title: "Bakerversity",
     description: "An LMS prototype exploring responsive technical-course authoring, content management, and learner presentation.",
     cardImage: {"src": "/assets/projects/bakerversity.jpg", "alt": "The Bakerversity homepage introduces free technical courses."},
-    screenshots: [{"src": "/assets/projects/bakerversity.jpg", "alt": "The Bakerversity homepage introduces free technical courses.", "caption": "The Bakerversity homepage introduces free technical courses.", "href": "https://bakerversity.vercel.app/", "capturedOn": "2026-11-07"}],
+    screenshots: [{"src":"/assets/projects/bakerversity.jpg","alt":"The Bakerversity homepage introduces free technical courses.","caption":"The Bakerversity homepage introduces free technical courses.","href":"https://bakerversity.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/bakerversity-course-outline.jpg","alt":"The course overview introduces free access and the course-content outline.","caption":"The course overview introduces free access and the course-content outline.","href":"https://bakerversity.vercel.app/courses/basic-skills-for-localization-engineering","capturedOn":"2026-11-07"},{"src":"/assets/projects/bakerversity-lesson.jpg","alt":"A Unicode normalization lesson pairs technical reading with persistent course navigation.","caption":"A Unicode normalization lesson pairs technical reading with persistent course navigation.","href":"https://bakerversity.vercel.app/courses/basic-skills-for-localization-engineering/2/lesson-23-diacritics-combining-characters-unicode-normalization","capturedOn":"2026-11-07"}],
     detailHref: "/projects/bakerversity",
     appHref: "https://bakerversity.vercel.app",
     repoHref: "https://github.com/michael-baker-content/bakerversity",
@@ -706,7 +734,7 @@ export const projects = [
     "title": "BakerLinks",
     "description": "A personal publishing tool for sharing projects, links, and an introduction, with flexible styling, curated animated backgrounds, and Markdown About content.",
     cardImage: {"src": "/assets/projects/bakerlinks.jpg", "alt": "A customized BakerLinks profile with project links and a cloud background."},
-    screenshots: [{"src": "/assets/projects/bakerlinks.jpg", "alt": "A customized BakerLinks profile with project links and a cloud background.", "caption": "A customized BakerLinks profile with project links and a cloud background.", "href": "https://bakerlinks.com/michael", "capturedOn": "2026-11-07"}],
+    screenshots: [{"src":"/assets/projects/bakerlinks.jpg","alt":"A customized BakerLinks profile with project links and a cloud background.","caption":"A customized BakerLinks profile with project links and a cloud background.","href":"https://bakerlinks.com/michael","capturedOn":"2026-11-07"},{"src":"/assets/projects/bakerlinks-about.jpg","alt":"The About Me tab adds a written introduction alongside the profile’s links.","caption":"The About Me tab adds a written introduction alongside the profile’s links.","href":"https://bakerlinks.com/michael","capturedOn":"2026-11-07"}],
     "detailHref": "/projects/bakerlinks",
     "appHref": "https://bakerlinks.com",
     "repoHref": "https://github.com/michael-baker-content/bakerlinks",
@@ -785,8 +813,8 @@ export const projects = [
     title: "Saske · Pathfinder Session Tracker",
     description:
       "A personal Pathfinder tracker whose next challenge is making phone use simpler and more pleasant than a plain-text session note.",
-    cardImage: { src: "/assets/projects/saske.jpg", alt: "Saske’s level 9 combat panel with core statistics, actions, and weapon cards." },
-    screenshots: [{ src: "/assets/projects/saske.jpg", alt: "Saske’s level 9 combat panel with core statistics, actions, and weapon cards.", caption: "The live tracker shows Saske at level 9, with combat information grouped for play.", href: "https://michael-baker-content.github.io/saske/", capturedOn: "2026-11-07" }],
+    cardImage: {"src":"/assets/projects/saske-companion.jpg","alt":"Haki’s companion panel with health, attacks, statistics, and barding."},
+    screenshots: [{"src":"/assets/projects/saske.jpg","alt":"Saske’s level 9 combat panel with core statistics, actions, and weapon cards.","caption":"The live tracker shows Saske at level 9, with combat information grouped for play.","href":"https://michael-baker-content.github.io/saske/","capturedOn":"2026-11-07"},{"src":"/assets/projects/saske-medicine.jpg","alt":"The Skills panel brings the Medicine tool’s targets, treatment choices, and roll controls together.","caption":"The Skills panel brings the Medicine tool’s targets, treatment choices, and roll controls together.","href":"https://michael-baker-content.github.io/saske/","capturedOn":"2026-11-07"},{"src":"/assets/projects/saske-companion.jpg","alt":"Haki’s companion panel separates health, core statistics, attacks, and equipped barding.","caption":"Haki’s companion panel separates health, core statistics, attacks, and equipped barding.","href":"https://michael-baker-content.github.io/saske/","capturedOn":"2026-11-07"}],
     detailHref: "/projects/saske",
     appHref: "https://michael-baker-content.github.io/saske/",
     repoHref: "https://github.com/michael-baker-content/saske",
@@ -850,6 +878,7 @@ export const projects = [
     description:
       "A utility for stripping Notion's auto-appended UUIDs from exported zip archives.",
     cardImage: stockImage("photo-1450101499163-c8848c66ca85", "Paper files and folders arranged for archival organization."),
+    screenshots: [{"src":"/assets/projects/notion-clean-interface.jpg","alt":"The archive cleaner provides a ZIP drop zone and explains that processing stays in the browser.","caption":"The archive cleaner provides a ZIP drop zone and explains that processing stays in the browser.","href":"https://michael-baker-content.github.io/notion-clean/","capturedOn":"2026-11-07"}],
     detailHref: "/projects/notion-clean",
     repoHref: "https://github.com/michael-baker-content/notion-clean",
     tone: "coral",
@@ -916,7 +945,7 @@ export const projects = [
     description:
       "Development notes from my independent projects: how they work, the choices behind them, and what changes along the way.",
     cardImage: {"src": "/assets/projects/development-journal.jpg", "alt": "The journal index with search, topic tags, and development notes."},
-    screenshots: [{"src": "/assets/projects/development-journal.jpg", "alt": "The journal index with search, topic tags, and development notes.", "caption": "The journal index with search, topic tags, and development notes.", "href": "https://michael-baker-content.github.io/blog/", "capturedOn": "2026-11-07"}],
+    screenshots: [{"src":"/assets/projects/development-journal.jpg","alt":"The journal index with search, topic tags, and development notes.","caption":"The journal index with search, topic tags, and development notes.","href":"https://michael-baker-content.github.io/blog/","capturedOn":"2026-11-07"},{"src":"/assets/projects/development-journal-article.jpg","alt":"A development article presents its introduction, topic links, and repository link.","caption":"A development article presents its introduction, topic links, and repository link.","href":"https://michael-baker-content.github.io/blog/returning-to-bakerlinks/","capturedOn":"2026-11-07"},{"src":"/assets/projects/development-journal-tag.jpg","alt":"The interface-design topic page collects related writing across projects.","caption":"The interface-design topic page collects related writing across projects.","href":"https://michael-baker-content.github.io/tags/interface-design/","capturedOn":"2026-11-07"}],
     detailHref: "/projects/github-repo-journal",
     appHref: "https://michael-baker-content.github.io/",
     repoHref: "https://github.com/michael-baker-content/michael-baker-content.github.io",

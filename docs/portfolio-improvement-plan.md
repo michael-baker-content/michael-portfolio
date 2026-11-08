@@ -38,7 +38,7 @@ Completion criteria: two approved examples with concrete actions and supported r
 
 ## 3. Capture product decisions, beyond homepages
 
-Current baseline: 13 listed case studies; 11 have screenshot records. Mike's List and Notion Archive Cleaner still use stock card imagery. Existing screenshots establish visible interfaces; they do not establish usability or outcomes.
+Current baseline: 13 listed case studies; 12 have screenshot records, including the expanded submenu/subpage captures. Mike’s List is deliberately excluded from this capture pass. Existing screenshots establish visible interfaces; they do not establish usability or outcomes. Selected Unsplash card imagery remains intentional for the grouped studies and quieter supporting projects; see project-images.md.
 
 | Priority | Project | Evidence to collect | What it should explain |
 | --- | --- | --- | --- |
@@ -49,11 +49,17 @@ Current baseline: 13 listed case studies; 11 have screenshot records. Mike's Lis
 | Next | Fantasy Sports Dashboards | A small scoring example alongside the relevant dashboard view. | How totals, ties, category points, and rank relate. |
 | Next | Saske | Current phone workflow and a sanitized approximation of the plain-text benchmark. | Why navigation effort matters during a session. |
 | Later | Notion Archive Cleaner | A representative before/after export with safe sample filenames. | Exactly what changes and what structure is preserved. |
-| Later | Mike's List | A current artifact if one exists, otherwise a clearly labeled concept when developed. | The venue-map direction without suggesting the retired application is live. |
+| Deferred | Mike’s List | No further capture or highlight work in this pass, at Michael’s request. | Preserve its supporting context without presenting the retired application as live. |
 
-For each capture, record the page or flow, capture date, relevant application version if known, caption, alternative text, and the exact claim it supports. Remove private account information. Do not label a local prototype as a live-site capture: the current screenshot section is titled “From the live site,” so local evidence needs a presentation change first.
+For each capture, record the page or flow, capture date, relevant application version if known, caption, alternative text, and the exact claim it supports. Remove private account information. Do not label a local prototype as a live-site capture: the screenshot section is titled “Project views,” and each caption must identify local or archival evidence when applicable.
 
 Completion criteria for the first pass: one decision-focused example for each opening project, with a caption that tells readers what to notice. Use existing screenshot fields where suitable; add video or new content structures only when the evidence requires them.
+
+## Completed capture expansion and browsing decisions
+
+Public captures now include Sketchlet palettes and expanded trio sharing; BakerLinks About; park destination/transit details; course outline and lesson; fantasy roster/scoring; Saske medicine/companion panels; film credits; Jacklet rules; journal article/topic views; portfolio capability filtering; and the archive-cleaner interface. Signed-in editor/authoring views, touch behavior on physical devices, and worked before/after sequences remain future evidence.
+
+Browsing now emphasizes capability and search, with Recommended/A–Z sorting. Keep additional subject/status filters and recently-updated sorting deferred unless a specific visitor need and reliable metadata justify them.
 
 ## Suggested sequence
 

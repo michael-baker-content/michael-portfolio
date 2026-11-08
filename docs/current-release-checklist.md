@@ -1,39 +1,38 @@
-# Current content release
+# Current portfolio release
 
-Prepared November 7, 2026. This checklist covers the current local changes; it is not a deployment record.
+Updated November 7, 2026. Local release preparation only; this is not a deployment record.
 
-## Release scope
+## Scope
 
-- Revised project narratives, roles, status, and next steps.
-- Twelve local screenshot assets used across eleven listed case studies, with captions, capture dates, and source-page links.
-- Screenshot-aware project cards and a screenshot section on detail pages.
-- Related project links, screenshot sanitization, and fallback behavior that prevents older saved stock images from replacing repository screenshots.
-- Removal of the retired Mike's List application destination, including from legacy saved content.
-- Editorial groundwork in `docs/portfolio-improvement-plan.md`.
+- Updated project narratives, roles, screenshots, and card imagery; Sketchlet’s short description now emphasizes evolving timed prompts and drawing at one’s own pace. Supporting case-study context includes tool refinement, practice, recovery, and explicit publication.
+- Thirteen listed case studies, twelve with screenshot records, referencing thirty local image assets. The latest pass adds eighteen captures of subpages, palettes, dialogs, course views, rosters, and other detailed interfaces. Mike’s List was excluded from that expansion.
+- Making Tools uses a collage workspace; Daily Games uses cards/dice; Mike’s List uses an empty tiki lounge. Movie Database, Fantasy Sports, and Saske use detail/submenu screenshots as their feature images. Source credits are in project-images.md.
+- Simplified project browsing: capability chips, search, Recommended/A–Z sorting, clear filters, result counts, empty results, and URL/history persistence. Editorial emphasis and timeline controls removed.
+- Case-study gallery label changed to Project views. Existing content normalization, related links, and retired Mike’s List destination handling remain part of the broader local release; inspect the actual Git diff before staging.
 
-## Checks
+## Verification of the latest changes
 
-- [x] Automated suite passes: 19 tests on November 7, 2026.
-- [x] Production build passes on November 7, 2026.
-- [x] All local image references resolve: twelve assets, 859,445 bytes total. Screenshot records contain alternative text, captions, source links, and capture dates; project slugs are unique.
-- [x] `git diff --check` passes.
-- [ ] Visually confirm each screenshot matches its caption and source page.
-- [ ] Review homepage cards and all screenshot-bearing detail pages at desktop and phone widths; check image readability, navigation, and keyboard focus.
-- [ ] Compare saved production content with repository defaults before treating the new copy as published.
-- [ ] Review the final diff and ensure only intended source, documentation, tests, and image assets are included.
-- [ ] Commit and push the reviewed changes.
-- [ ] After deployment, verify home, Experience, the case-study index, and the four opening project pages, including a reload on a direct project route.
+- [x] Thirty referenced local image assets resolve; current counts verified from project records.
+- [x] Eighteen new captures visually reviewed in a contact sheet; descriptive captions and source links recorded.
+- [x] Updated project modules imported successfully, with unrelated records preserved during targeted edits.
+- [x] Filter logic directly checked for URL round trips, invalid values, combined search/capability, empty results, clearing state, and preserving input order.
+- [x] Local browser checks covered capability + search, A–Z, reload, returning from a detail page with Back, empty results, and clearing filters. Desktop and phone controls visually reviewed; no horizontal overflow observed at the checked phone viewport.
+- [x] Michael reports the full current test suite passed: npm test.
+- [x] Michael reports the current production build passed: npm run build.
+- [x] Michael reports git diff --check passed; supplied status/stat output and approved the additional file scope after review.
+- [ ] Review final card crops and updated Sketchlet text in the local preview; verify representative galleries at desktop and phone widths.
+- [x] Live /api/content inspected: content is null and source is default. No active saved content overrides the deployment; Michael confirms no dashboard edits need preservation.
+- [ ] Review and stage only intended source, documentation, tests, and assets; commit and push after checks pass.
+- [ ] After deployment, check direct routes, filter URL reloads, image loading, and effective content after dashboard data loads.
 
-## Saved-content check
+Earlier documentation recorded nineteen passing tests and a build on November 7 before subsequent changes. Those earlier results do not validate the latest tree. Michael subsequently reported successful current tests, build, and diff checks. The agent did not run those commands.
 
-Production loads content from `/api/content`, and saved fields generally override repository defaults. The new screenshot fallback does not replace all saved narrative copy.
+## Saved content
 
-The read-only comparison attempt on November 7 failed because this environment could not resolve `michaelbaker.vercel.app`. Production content parity remains unverified.
+Production loads /api/content. Saved narrative fields, card images, and nonempty screenshot arrays can take precedence over defaults. The latest live response was {"content":null,"source":"default"}. The pull script therefore wrote no snapshot. No active saved override requires reconciliation for this release. The API also returns this fallback when storage is unavailable, so this is not proof that no stored document ever existed. Michael confirms nothing from dashboard editing needs preservation.
 
-When reachable, export the saved content with the dashboard's Download JSON action or `npm run content:pull`. Preserve that export before making any dashboard updates. Compare the effective saved content with `src/data/projects.js` and `src/data/profile.js`, especially narrative text, priority, stage, roles, and links. Keep the revised screenshot assets in the deployment even if saved copy will be reconciled separately.
-
-Do not reset the whole saved document just to publish revised project copy: it may contain intentional edits absent from repository defaults. Reconcile the differences explicitly, then verify the deployed pages after their saved content has loaded.
+Michael runs npm run content:pull or exports Download JSON from the dashboard. Compare that snapshot with src/data/projects.js and src/data/profile.js. Preserve intentional edits and reconcile the affected fields; do not reset the whole document from repository defaults. Re-fetch before an authorized dashboard save. Keep snapshots and credentials out of the commit. Dashboard saves are separate from committing/deploying and have not been authorized here.
 
 ## Suggested commit message
 
-`Refresh portfolio case studies with product screenshots and editorial roadmap`
+Refresh project galleries and simplify portfolio browsing

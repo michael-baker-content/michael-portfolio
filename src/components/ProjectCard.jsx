@@ -46,16 +46,7 @@ export function ProjectCard({ project }) {
       </div>
 
       <div className="p-6 pt-2">
-        <ul className="flex flex-wrap gap-x-3 gap-y-2" aria-label={`${project.title} evidence`}>
-          <li className="border-b border-portfolioBlue/35 pb-0.5 text-xs font-black uppercase tracking-[0.14em] text-portfolioBlue">
-            {project.status}
-          </li>
-          {project.evidence.map((item) => (
-            <li key={item} className="border-b border-ink/20 pb-0.5 text-xs font-black uppercase tracking-[0.14em] text-ink/60">
-              {item}
-            </li>
-          ))}
-        </ul>
+        <p className="text-sm font-semibold text-muted">{project.status}</p>
         <div className="mt-6 flex flex-wrap gap-4">
           <Link className="editorial-link" href={project.detailHref}>
             Read case study
