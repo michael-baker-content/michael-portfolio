@@ -1,6 +1,6 @@
 # Michael Baker — Portfolio
 
-**[View the portfolio](https://michaelbaker.vercel.app)** · [Experience](https://michaelbaker.vercel.app/experience) · [Case studies](https://michaelbaker.vercel.app/case-studies)
+**[View the portfolio](https://michaelbaker.xyz)** · [Experience](https://michaelbaker.xyz/experience) · [Case studies](https://michaelbaker.xyz/case-studies)
 
 A personal portfolio connecting professional experience in web production, technical publishing, and online education with independent applications and tools. The site gives visitors two paths: understand the experience behind the work, or explore what Michael is building.
 
@@ -132,7 +132,7 @@ Use **Download JSON** in the dashboard to export the current editor document, or
 npm run content:pull
 ```
 
-By default, this reads `https://michaelbaker.vercel.app/api/content` and writes `content-snapshots/latest-content.json`. To use another endpoint or destination:
+By default, this reads `https://michaelbaker.xyz/api/content` and writes `content-snapshots/latest-content.json`. To use another endpoint or destination:
 
 ```sh
 npm run content:pull -- https://your-preview-url.vercel.app/api/content content-snapshots/preview-content.json

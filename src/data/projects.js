@@ -16,7 +16,7 @@ export const projects = [
     description:
       "My active portfolio, bringing professional experience, independent projects, and the thinking behind the work into one place.",
     cardImage: {"src": "/assets/projects/portfolio.jpg", "alt": "The live portfolio homepage."},
-    screenshots: [{"src":"/assets/projects/portfolio.jpg","alt":"The live portfolio homepage.","caption":"The live portfolio homepage.","href":"https://michaelbaker.vercel.app/","capturedOn":"2026-11-07"},{"src":"/assets/projects/portfolio-capability-filter.jpg","alt":"The project index with Interaction and interface design selected as the capability filter.","caption":"The project index with Interaction and interface design selected as the capability filter.","href":"https://michaelbaker.vercel.app/case-studies","capturedOn":"2026-11-07"}],
+    screenshots: [{"src":"/assets/projects/portfolio.jpg","alt":"The live portfolio homepage.","caption":"The live portfolio homepage.","href":"https://michaelbaker.xyz/","capturedOn":"2026-11-07"},{"src":"/assets/projects/portfolio-capability-filter.jpg","alt":"The project index with Interaction and interface design selected as the capability filter.","caption":"The project index with Interaction and interface design selected as the capability filter.","href":"https://michaelbaker.xyz/case-studies","capturedOn":"2026-11-07"}],
     detailHref: "/projects/portfolio",
     repoHref: "https://github.com/michael-baker-content/michael-portfolio",
     tone: "gold",

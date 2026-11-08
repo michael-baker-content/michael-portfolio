@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const defaultUrl = "https://michaelbaker.vercel.app/api/content";
+const defaultUrl = "https://michaelbaker.xyz/api/content";
 const contentUrl = process.argv[2] || process.env.CONTENT_API_URL || defaultUrl;
 const outputPath = process.argv[3] || process.env.CONTENT_OUTPUT_PATH || "content-snapshots/latest-content.json";
 
