@@ -14,7 +14,7 @@ The source pages identified these selections as free under the Unsplash License 
 
 ## Screenshot inventory
 
-Current records use thirty local assets across twelve screenshot-bearing case studies. Captures are dated November 7, 2026. Menu-state links lead to the source page; a visitor may need to open the relevant tab/dialog. The phone palette uses a browser viewport and is not a claim of physical-phone testing.
+Current records use thirty-six local assets across twelve screenshot-bearing case studies. Captures are dated November 7, 2026. Menu-state links lead to the source page; a visitor may need to open the relevant tab/dialog. The phone palette uses a browser viewport and is not a claim of physical-phone testing.
 
 ### This Portfolio
 
@@ -99,3 +99,26 @@ Current records use thirty local assets across twelve screenshot-bearing case st
 Keep cards independent from gallery order. Update cardImage and screenshots intentionally; use alt text describing what is visible and captions explaining why it matters. Use 2–4 complementary screenshots in most studies rather than exhaustive page dumps. Preserve creator credit for displayed artwork; the captured Sketchlet trio is credited to Michael Baker.
 
 Saved dashboard cardImage fields and nonempty screenshots arrays may override these defaults. Compare the saved content document before deployment and reconcile only intended fields. Deploying image files alone does not select them in saved content.
+
+
+## Additional portrait pass
+
+Six portrait browser captures were added after the earlier release checks: Sketchlet full-screen studio, Saske companion and Medicine panels, Jacklet game, BakerLinks public profile, and Baker Parks destination. They are used in six case-study galleries, including Daily Games and Making Tools. Earlier desktop captures and feature-image choices remain intact. Portrait gallery images are capped at 48rem high and retain their aspect ratio. These captures are not physical-device testing. A 390 × 844 viewport was requested; captured dimensions vary with the browser surface.
+
+- baker-parks-mobile-destination.jpg: 375 × 811
+- bakerlinks-mobile-profile.jpg: 385 × 832
+- jacklet-mobile-game.jpg: 375 × 811
+- saske-mobile-companion.jpg: 390 × 843
+- saske-mobile-medicine.jpg: 390 × 843
+- sketchlet-mobile-studio.jpg: 390 × 843
+
+The local preview server was unavailable during final integration review; restart it and visually check the gallery sizing before release.
+
+
+## Screenshot slideshow
+
+ProjectPage uses ScreenshotGallery for one slide at a time. Native CSS scroll snap supports horizontal swipe; arrows, thumbnails, and Left/Right/Home/End keyboard controls navigate without autoplay. Inactive slides are hidden from assistive technology and keyboard focus. Reduced-motion preferences disable animated scrolling/effects. Container queries place comparison views side by side on wide galleries and stack them on narrow galleries; unsupported scroll-driven animation falls back to the ordinary gallery.
+
+Comparison grouping is curated in src/lib/screenshotSlides.js using existing screenshot filenames, without changing the saved-content schema. Pairing requires both images; a missing partner remains a standalone slide. Add same-page comparisons deliberately and keep the comparison sentence descriptive, without claiming improved outcomes. Thumbnail selection represents one slide even when it contains two views.
+
+Local browser verification covered Saske’s paired views, thumbnail navigation, first/last arrow states, Home-key navigation, resize alignment, and phone stacking without horizontal page overflow. All project screenshots were checked to appear exactly once in slide grouping. npm test and npm run build remain to be run for this change.

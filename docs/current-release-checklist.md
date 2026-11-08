@@ -36,3 +36,13 @@ Michael runs npm run content:pull or exports Download JSON from the dashboard. C
 ## Suggested commit message
 
 Refresh project galleries and simplify portfolio browsing
+
+
+## Subsequent portrait screenshot update
+
+The prior passing checks predate this additional pass. Six portrait captures and aspect-preserving gallery sizing were added. All referenced local assets resolve; capture imagery was visually reviewed. The local preview server was not running, so rendered integration review remains pending. Before committing this follow-up, run npm test, npm run build, and git diff --check; review portrait gallery presentation at desktop and phone widths.
+
+
+## Screenshot slideshow follow-up
+
+Added ScreenshotGallery, curated desktop/mobile slide grouping, native scroll snap, arrows, thumbnails, and accessible current-slide state. Container queries stack comparisons on narrow screens; optional scroll-driven animation and reduced-motion fallbacks are in styles.css. Existing screenshot records and feature images are unchanged. Local browser and direct grouping checks passed; new grouping regression cases are in test/screenshotSlides.test.mjs. Run npm test, npm run build, and git diff --check before committing this follow-up.

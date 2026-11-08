@@ -1,5 +1,6 @@
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import React from "react";
+import { ScreenshotGallery } from "../components/ScreenshotGallery.jsx";
 import { Link } from "../components/Link.jsx";
 
 const toneClasses = {
@@ -99,25 +100,7 @@ export function ProjectPage({ content, slug }) {
         <OverviewBlock title="Where it stands" body={project.outcome} />
       </section>
 
-      {project.screenshots?.length ? (
-        <section className="page-shell border-t border-ink/15 py-12" aria-labelledby="project-screenshots">
-          <p className="eyebrow">Project views</p>
-          <h2 id="project-screenshots" className="mt-3 text-3xl">A closer look.</h2>
-          <div className="mt-8 grid gap-10">
-            {project.screenshots.map((shot) => (
-              <figure key={shot.src} className="min-w-0">
-                <a href={shot.src} className="block overflow-hidden rounded border border-ink/20 bg-white" aria-label={`View full screenshot: ${shot.alt}`}>
-                  <img src={shot.src} alt={shot.alt} loading="lazy" className="block h-auto w-full" />
-                </a>
-                <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-3 text-sm leading-6 text-muted">
-                  <span>{shot.caption}{shot.capturedOn ? ` Captured ${shot.capturedOn}.` : ""}</span>
-                  {shot.href ? <a className="editorial-link" href={shot.href}>View source page <ExternalLink size={14} /></a> : null}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-      ) : null}
+      {project.screenshots?.length ? <ScreenshotGallery key={project.slug} screenshots={project.screenshots} title={project.title} /> : null}
 
       {project.metrics?.length ? (
         <dl className="page-shell grid gap-5 border-t border-ink/15 py-8 sm:grid-cols-3">
