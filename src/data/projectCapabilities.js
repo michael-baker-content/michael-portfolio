@@ -8,6 +8,7 @@ export const capabilityLabels = {
 const projectCapabilities = {
   portfolio: ["content", "interaction"],
   sketchlet: ["interaction"],
+  "daily-games": ["interaction"],
   bakerparks: ["data", "interaction", "content"],
   mikeslist: ["data", "content"],
   "making-tools": ["data", "interaction"],

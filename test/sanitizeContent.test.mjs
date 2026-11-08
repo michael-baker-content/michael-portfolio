@@ -59,7 +59,7 @@ test("sanitizeContent migrates legacy Mike's List project content", () => {
   assert.equal(content.projects[0].slug, "mikeslist");
   assert.equal(content.projects[0].detailHref, "/projects/mikeslist");
   assert.equal(content.projects[0].title, "Mike's List");
-  assert.equal(content.projects[0].appHref, "https://mikeslist.xyz/");
+  assert.equal(content.projects[0].appHref, "");
   assert.equal(content.projects[0].repoHref, "https://github.com/michael-baker-content/mikeslist");
 });
 
@@ -112,4 +112,39 @@ test("sanitizeContent only keeps Codex as a collaborator for allowed case studie
   assert.deepEqual(content.projects[0].collaborators, ["Michael Baker", "Codex"]);
   assert.deepEqual(content.projects[1].collaborators, ["Michael Baker", "Codex"]);
   assert.deepEqual(content.projects[2].collaborators, ["Michael Baker"]);
+});
+
+
+test("project related links retain valid destinations and discard unsafe or incomplete links", () => {
+  const content = sanitizeContent({ projects: [{ slug: "daily-games", relatedLinks: [
+    { label: "Play", href: "https://jacklet.vercel.app/" },
+    { label: "Unsafe", href: "javascript:alert(1)" },
+    { href: "https://example.com/" },
+  ] }] });
+  assert.deepEqual(content.projects[0].relatedLinks, [
+    { label: "Play", href: "https://jacklet.vercel.app/" },
+  ]);
+  assert.deepEqual(sanitizeContent({ projects: [{ slug: "older-project" }] }).projects[0].relatedLinks, []);
+});
+
+
+test("Mike's List saved content cannot restore the retired app link", () => {
+  const content = sanitizeContent({ projects: [{
+    slug: "mikeslist",
+    appHref: "https://mikeslist.xyz/",
+    repoHref: "https://github.com/michael-baker-content/mikeslist",
+  }] });
+  assert.equal(content.projects[0].appHref, "");
+  assert.equal(content.projects[0].repoHref, "https://github.com/michael-baker-content/mikeslist");
+});
+
+
+test("screenshots reject unsafe images and clean source links", () => {
+  const content = sanitizeContent({ projects: [{ slug: "screenshots", screenshots: [
+    { src: "/assets/projects/sketchlet.jpg", alt: "Sketchlet", href: "javascript:alert(1)" },
+    { src: "javascript:alert(1)", alt: "Invalid" },
+  ] }] });
+  assert.equal(content.projects[0].screenshots.length, 1);
+  assert.equal(content.projects[0].screenshots[0].src, "/assets/projects/sketchlet.jpg");
+  assert.equal(content.projects[0].screenshots[0].href, "");
 });

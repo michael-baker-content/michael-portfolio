@@ -41,7 +41,14 @@ function mergeProjectsWithDefaults(sourceProjects) {
     if (!sourceProject) return defaultProject;
 
     sourceBySlug.delete(key);
-    return { ...defaultProject, ...sourceProject };
+    const savedStockImage = sourceProject.cardImage?.src?.includes("images.unsplash.com/");
+    const hasProjectScreenshot = defaultProject.cardImage?.src?.startsWith("/assets/projects/");
+    return {
+      ...defaultProject,
+      ...sourceProject,
+      cardImage: savedStockImage && hasProjectScreenshot ? defaultProject.cardImage : (sourceProject.cardImage || defaultProject.cardImage),
+      screenshots: sourceProject.screenshots?.length ? sourceProject.screenshots : (defaultProject.screenshots || []),
+    };
   });
 
   return [...mergedProjects, ...sourceBySlug.values()];

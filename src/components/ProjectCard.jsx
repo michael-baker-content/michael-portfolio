@@ -17,14 +17,15 @@ const stageLabels = {
 };
 
 export function ProjectCard({ project }) {
+  const isScreenshot = project.cardImage?.src?.startsWith("/assets/projects/");
   const isBackground = project.stage === "background";
 
   return (
     <article className={`editorial-card relative flex min-h-80 flex-col justify-between overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-1.5 ${isBackground ? "opacity-[0.84]" : ""} ${accentClasses[project.tone] || "before:bg-ink"}`}>
       <div>
         {project.cardImage ? (
-          <div className="aspect-[2.35/1] border-b border-ink/15 bg-white">
-            <img className="h-full w-full object-cover object-center grayscale-[18%] saturate-[0.82] transition duration-300 hover:grayscale-0 hover:saturate-100" src={project.cardImage.src} alt={project.cardImage.alt} loading="lazy" />
+          <div className={`${isScreenshot ? "aspect-video" : "aspect-[2.35/1]"} border-b border-ink/15 bg-white`}>
+            <img className={`h-full w-full ${isScreenshot ? "object-contain" : "object-cover object-center grayscale-[18%] saturate-[0.82] transition duration-300 hover:grayscale-0 hover:saturate-100"}`} src={project.cardImage.src} alt={project.cardImage.alt} loading="lazy" />
           </div>
         ) : null}
         <div className="p-6">

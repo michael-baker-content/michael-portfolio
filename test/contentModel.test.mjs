@@ -108,9 +108,19 @@ test("deriveContent preserves explicit saved emphasis stages", () => {
 
 test("active status does not override the chosen project order", () => {
   const content = deriveContent();
-  assert.deepEqual(content.listedProjects.slice(0, 6).map((project) => project.slug),
-    ["sketchlet", "bakerlinks", "bakerparks", "bakerversity", "mikeslist", "portfolio"]);
+  assert.deepEqual(content.listedProjects.slice(0, 10).map((project) => project.slug),
+    ["sketchlet", "bakerlinks", "bakerparks", "bakerversity", "making-tools", "daily-games", "github-repo-journal", "portfolio", "mikeslist", "cine2helper"]);
   assert.equal(content.projectBySlug("portfolio").stage, "featured");
   assert.equal(content.projectBySlug("bakerversity").stage, "featured");
   assert.equal(content.projectBySlug("making-tools").stage, "supporting");
+});
+
+
+test("older saved stock images do not replace project screenshots", () => {
+  const content = deriveContent({ projects: [{ slug: "sketchlet", cardImage: {
+    src: "https://images.unsplash.com/old-stock-photo", alt: "Old image",
+  } }] });
+  const project = content.projectBySlug("sketchlet");
+  assert.equal(project.cardImage.src, "/assets/projects/sketchlet.jpg");
+  assert.ok(project.screenshots.length > 0);
 });

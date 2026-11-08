@@ -8,67 +8,64 @@ export const projects = [
     slug: "portfolio",
     visibility: "listed",
     stage: "featured",
-    priority: 70,
+    priority: 80,
     category: "Portfolio system",
     label: "Portfolio",
     emphasisLabel: "Active",
     title: "This Portfolio",
     description:
-      "A case study about evolving the forked 1.0 portfolio into a themed experiment, then folding that experiment back into a more useful 2.0 site.",
-    cardImage: stockImage("photo-1497366754035-f200968a6e72", "A desk workspace with a laptop, notebook, and planning materials."),
+      "My active portfolio, bringing professional experience, independent projects, and the thinking behind the work into one place.",
+    cardImage: {"src": "/assets/projects/portfolio.jpg", "alt": "The live portfolio homepage."},
+    screenshots: [{"src": "/assets/projects/portfolio.jpg", "alt": "The live portfolio homepage.", "caption": "The live portfolio homepage.", "href": "https://michaelbaker.vercel.app/", "capturedOn": "2026-11-07"}],
     detailHref: "/projects/portfolio",
     repoHref: "https://github.com/michael-baker-content/michael-portfolio",
     tone: "gold",
-    status: "Portfolio system",
-    timeline: "2026",
-    role: "Information architecture, creative direction, frontend engineering",
+    status: "Public site · ongoing updates",
+    timeline: "2026–present",
+    role: "Writing, information architecture, and creative direction; implementation with Codex",
     collaborators: ["Michael Baker", "Codex"],
-    tools: ["React", "Vite", "Tailwind", "Structured content"],
-    evidence: ["1.0 lineage", "Theme exploration", "2.0 content model"],
-    metrics: [
-      { label: "Case studies", value: "10+" },
-      { label: "Related apps", value: "3" },
-      { label: "Content source", value: "Data-driven" },
-    ],
+    tools: ["React", "Vite", "Tailwind", "Vercel", "Vercel Blob"],
+    evidence: ["Project narratives", "Capability filters", "Content editing"],
+    metrics: [],
     summary:
-      "Portfolio Deluxe began as a React/Tailwind fork and became a working content product for presenting projects as evidence. The build tracks the shift from starter-site aesthetics to structured data, filters, admin editing, deployment, and a clearer candidate story.",
+      "This is my active portfolio: a place to connect my professional background with the independent applications and tools I am developing. As those projects grow, the site needs to explain both what they do and the decisions behind them. It has developed its own visual identity, navigation, and publishing structure, with ongoing revisions to keep the work accurately represented.",
     problem:
-      "The original template had a useful modern portfolio structure, but it still behaved like a template. The first personalized version proved that the site could carry a distinct visual voice, but it also made the main portfolio feel more like a theme experiment than a durable system for explaining work.",
+      "My projects span creative tools, public information, publishing, learning, and data. A list of names and technologies does little to explain what connects them or where my contribution lies. The challenge is to give visitors a clear introduction, useful ways to explore, and enough detail to understand the work without making every page an exhaustive project history.",
     outcome:
-      "The current site preserves the fork's familiar portfolio promise while adding a richer content model, a filterable case-study index, direct contact, a Taste page, a protected admin dashboard, and a deployment path that can support ongoing edits.",
+      "The portfolio brings together professional experience, a searchable project index, and detailed case studies. Readers can explore by capability, subject, or current status. A shared content model supports project cards and detail pages, while an owner editing dashboard supports ongoing copy updates. The site continues to evolve alongside the projects it presents.",
     decisions: [
-      "Preserve the 1.0 portfolio pattern so visitors can still recognize the source lineage: hero, navigation, work, capabilities, projects, and contact.",
-      "Move the more theatrical visual experiment into the case-study story so the main site can feel expressive without becoming only a theme demo.",
-      "Make project content data-driven so homepage cards, filters, detail pages, and admin edits all rely on the same model.",
-      "Separate the homepage pitch from the case-study evidence: the homepage introduces the candidate, while detail pages explain the work.",
-      "Use Vercel Blob for editable live content while keeping code defaults as a durable fallback for local development and recovery.",
+      "Give professional experience and independent projects their own space, connected by the skills and interests that run through both.",
+      "Use concise project introductions with fuller accounts of context, decisions, and next steps on the detail pages.",
+      "Offer capability filters so readers can find related strengths across projects with different subjects and technologies.",
+      "Keep editorial order separate from project activity, giving the most relevant work prominence without implying that every active project belongs at the top.",
+      "Use a shared content model and an editing dashboard to maintain the growing collection of case studies.",
     ],
     sections: [
       {
-        title: "Starting Point",
+        title: "Connecting experience and independent work",
         body:
-          "The fork supplied a strong 1.0 baseline: a recognizable modern portfolio shape, Tailwind styling, responsive navigation, animated polish, project cards, and a contact path. That made it a useful starter, but the content still needed a stronger point of view and a more flexible structure.",
+          "The site needs to explain how my background in content, publishing, and education relates to what I am building now. The Experience page provides professional context, while the projects show those interests taking shape in working applications. I direct the presentation and write and revise the narratives, working with Codex on implementation.",
       },
       {
-        title: "Theme Experiment",
+        title: "Giving readers ways into the work",
         body:
-          "The first redesign explored a brighter, more theatrical identity. It proved the site could carry a distinct voice, but it also clarified that the main site should not be only an aesthetic experiment. That work now functions as evidence of visual direction rather than the entire brand.",
+          "Someone interested in interface design may find relevant work in a drawing tool, a link-sharing platform, or a parks explorer. Capability filters make those connections available alongside categories and search. Curated order introduces the work I most want to highlight; activity labels describe where each project stands. This portfolio remains active without needing a prominent place in its own project list.",
       },
       {
-        title: "Content System",
+        title: "Keeping the stories current",
         body:
-          "The 2.0 version is organized around structured content. Each project carries display controls, metadata, links, metrics, decisions, and narrative sections, so homepage cards, filters, project pages, and admin editing all share one model.",
+          "Several projects have developed substantially since their earlier writeups. Maintaining the portfolio means revisiting the central story, my contribution, current features, and remaining questions. Shared project records keep summaries, links, decisions, and narrative sections together so the same material can support cards, filtering, and detail pages. The editing dashboard provides another way to revise that content, with token-authorized saving to Vercel Blob and repository defaults available when saved content cannot be loaded.",
       },
       {
-        title: "Backend Editing",
+        title: "A visual identity of its own",
         body:
-          "The admin dashboard turns the portfolio into a small content-management workflow. Saved content can live in Vercel Blob, while the code still contains defaults and tests that keep the site safe when backend content is missing or incomplete.",
+          "The portfolio began from an open-source React and Tailwind starter, credited in the repository. Its design and structure have since changed substantially. The current direction uses expressive typography, a consistent page hierarchy, and reusable project layouts to give varied work a coherent setting. The starter is part of the site's history; the ongoing design decisions follow the needs of my own portfolio.",
       },
     ],
     nextSteps: [
-      "Add a visual timeline showing the original fork, the themed experiment, and the current 2.0 portfolio system.",
-      "Publish a short implementation note on how the admin dashboard, default content, and live Blob content work together.",
-      "Turn the fork-to-2.0 process into a reusable adaptation guide for people starting from the same source repo.",
+      "Continue revising older case studies as projects develop, with clearer accounts of my contribution and current priorities.",
+      "Replace remaining stock imagery with project screenshots and examples that support the writing.",
+      "Review how easily visitors can find relevant work and move between professional experience, project summaries, and detailed case studies.",
     ],
   },
   {
@@ -82,7 +79,8 @@ export const projects = [
     title: "Sketchlet",
     description:
       "A daily drawing playground shaped by practical decisions about draft recovery, touch input, practice, and publication.",
-    cardImage: stockImage("photo-1513475382585-d06e58bcb0e0", "Colored pencils arranged for a drawing session."),
+    cardImage: {"src": "/assets/projects/sketchlet.jpg", "alt": "Sketchlet’s current homepage introduces three timed drawing rounds."},
+    screenshots: [{"src": "/assets/projects/sketchlet.jpg", "alt": "Sketchlet’s current homepage introduces three timed drawing rounds.", "caption": "Sketchlet’s current homepage introduces three timed drawing rounds.", "href": "https://sketchlet.app/", "capturedOn": "2026-11-07"}],
     detailHref: "/projects/sketchlet",
     appHref: "https://sketchlet.app",
     repoHref: "https://github.com/michael-baker-content/sketchlet",
@@ -155,9 +153,10 @@ export const projects = [
     category: "Civic information",
     label: "Case study",
     emphasisLabel: "Active",
-    title: "BakerParks",
+    title: "Baker Parks",
     description: "An independent San Francisco parks guide that turns fragmented public data into searchable destinations, with source links, original photography, and paths to official services.",
-    cardImage: { src: "https://yfhyoklpjmg7y4gg.public.blob.vercel-storage.com/media/bay-view-park-c9800e4b-853f-47a1-9e03-8e28ee6bf1be/fa4ad1990601/1280.webp", alt: "Bay View Park, San Francisco" },
+    cardImage: {"src": "/assets/projects/baker-parks.jpg", "alt": "Park search and activity choices on the Baker Parks homepage."},
+    screenshots: [{"src": "/assets/projects/baker-parks.jpg", "alt": "Park search and activity choices on the Baker Parks homepage.", "caption": "Park search and activity choices on the Baker Parks homepage.", "href": "https://bakerparks.vercel.app/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/baker-parks-explore.jpg", "alt": "Destination filters alongside a map of San Francisco parks.", "caption": "Destination filters alongside a map of San Francisco parks.", "href": "https://bakerparks.vercel.app/explore/?view=map", "capturedOn": "2026-11-07"}],
     detailHref: "/projects/bakerparks",
     appHref: "https://bakerparks.vercel.app",
     repoHref: "https://github.com/michael-baker-content/sf-parks",
@@ -182,7 +181,7 @@ export const projects = [
       "Original photography"
     ],
     metrics: [],
-    summary: "BakerParks, called SF Parks Explorer in the application and repository, began after I read an article about frustration with the SF Parks website. It brings selected public records, park information, maps, and scheduled transit context into one discovery experience. The aim is to help residents and visitors understand their options while keeping policies, registration, permits, and reservations with the City of San Francisco.",
+    summary: "Baker Parks, called SF Parks Explorer in the application and repository, began after I read an article about frustration with the SF Parks website. It brings selected public records, park information, maps, and scheduled transit context into one discovery experience. The aim is to help residents and visitors understand their options while keeping policies, registration, permits, and reservations with the City of San Francisco.",
     problem: "Planning a park visit can mean piecing together property records, amenity listings, facility pages, maps, transit schedules, and separate reservation systems. Those sources serve different institutional purposes. The challenge is to translate them into useful choices without disguising uncertainty or creating a competing official service.",
     outcome: "The October 2026 implementation brings together 249 destinations, nine areas, and 41 neighborhoods, with search, shareable filters, optional maps, and scheduled transit context. A local-only editor supports ongoing corrections and content maintenance. The prototype still needs a deployment review and resident usability testing.",
     decisions: [
@@ -229,41 +228,40 @@ export const projects = [
     slug: "mikeslist",
     visibility: "listed",
     stage: "background",
-    priority: 50,
+    priority: 90,
     category: "Local discovery",
     label: "Case study",
     emphasisLabel: "Background",
     title: "Mike's List",
     description:
-      "A local event-discovery experiment that revealed how much steady editorial labor a useful events calendar requires.",
+      "A local discovery experiment moving toward an information-rich map of venues hosting entertainment today, this week, or another selected period.",
     cardImage: stockImage("photo-1501386761578-eac5c94b800a", "A live music crowd facing a brightly lit stage."),
     detailHref: "/projects/mikeslist",
-    appHref: "https://mikeslist.xyz",
     repoHref: "https://github.com/michael-baker-content/mikeslist",
     tone: "spotlight",
-    status: "Local discovery tool",
+    status: "Background · venue-focused revision planned",
     timeline: "2026",
     role: "Product design, data modeling, prototype engineering",
     collaborators: ["Michael Baker", "Codex"],
     tools: ["JavaScript", "Local data stores", "Wikidata", "Google Places"],
-    evidence: ["Freshness problem", "Artist review", "Source trails"],
+    evidence: ["Venue records", "Maintenance lessons", "Source trails"],
     metrics: [
       { label: "Primary challenge", value: "Freshness" },
-      { label: "Data types", value: "Artists, venues, events" },
+      { label: "Next focus", value: "Venues" },
       { label: "Status", value: "Background" },
     ],
     summary:
-      "Mike's List began as a local show-discovery tool and quickly became a lesson in the operational reality of events calendars. There is value in the idea, but the product depends on a steady influx of fresh, verified information that I cannot currently provide at the pace the category demands.",
+      "Mike’s List began as a local show-discovery tool and became a lesson in the upkeep that event and artist information requires. Maintaining artist tracking is not practical for me. The next direction is to keep the venue list, remove artist tracking entirely, and build an information-rich map of places hosting entertainment today, this week, or another selected period. The focus shifts from researching artists to helping someone see where something is happening and learn about the venue.",
     problem:
       "Events content expires quickly. Last week's listings have little value, and each new week may introduce artists with very little overlap from the week before. The lower the profile of an event, the less likely algorithmically derived artist information is to be accurate.",
     outcome:
-      "The project clarified the content-quality bar: local discovery needs human review, source tracking, and a lot of data entry. Mike's List remains a useful background study because it shows where automation helps and where editorial labor is still unavoidable.",
+      "The current project demonstrated the value and cost of gathering local music information: useful discovery needs source tracking, correction, and human review. I have stopped updating the listings. A venue-map revision is planned, using the existing venue list and time filters to surface places with active entertainment events. Artist tracking has not yet been removed, and a manageable way to keep event timing current remains part of the work ahead.",
     decisions: [
       "Treat every show listing as time-sensitive content, not a durable evergreen record.",
       "Separate artists, venues, and events so reusable information can persist even when weekly event listings expire.",
       "Assume low-profile events need more human review because automated artist matching becomes less reliable as public data gets thinner.",
       "Make source trails and review states visible so the product does not pretend uncertain enrichment is finished editorial work.",
-      "Move the project into the background until there is a sustainable way to provide the steady content operations it needs.",
+      "Keep the project in the background while planning a narrower venue-focused version that removes artist tracking.",
     ],
     sections: [
       {
@@ -284,27 +282,94 @@ export const projects = [
       {
         title: "What Remains",
         body:
-          "There is still something interesting here: automation can support local discovery, but the product has to respect the editorial labor needed to make fresh listings trustworthy.",
+          "The venue list is the part I want to keep and expand into an information-rich map. Someone could choose today, this week, or another period and see which venues have entertainment events, then explore information about the places themselves. Artist profiles and enrichment would be removed from the scope. Time-sensitive event information still needs a reliable source and review process; narrowing the focus changes the maintenance problem rather than eliminating it.",
       },
     ],
     nextSteps: [
-      "Keep Mike's List in the background while I focus on projects with a more sustainable maintenance rhythm.",
-      "Preserve the lessons about source confidence, review queues, and the limits of automated enrichment.",
-      "Revisit the idea only if there is a clearer content pipeline or narrower scope that can support fresh listings without constant manual upkeep.",
+      "Use the existing venue list as the foundation for an information-rich map, removing artist tracking entirely.",
+      "Explore time filters for venues with entertainment today, this week, or another selected period, alongside useful venue details.",
+      "Identify a manageable source and review process for event dates, venue details, and official links before committing to ongoing coverage.",
+    ],
+  },
+  {
+    slug: "daily-games",
+    visibility: "listed",
+    stage: "supporting",
+    priority: 60,
+    category: "Daily games",
+    label: "Case study",
+    title: "Daily Games",
+    description:
+      "Sketchlet and Jacklet: two approaches to a daily game, from an open drawing prompt to a shared blackjack challenge.",
+    cardImage: {"src": "/assets/projects/jacklet.jpg", "alt": "A daily Jacklet hand, with score and strikes visible."},
+    screenshots: [{"src": "/assets/projects/jacklet.jpg", "alt": "A daily Jacklet hand, with score and strikes visible.", "caption": "A daily Jacklet hand, with score and strikes visible.", "href": "https://jacklet.vercel.app/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/sketchlet.jpg", "alt": "Sketchlet’s daily invitation through drawing.", "caption": "Sketchlet’s daily invitation through drawing.", "href": "https://sketchlet.app/", "capturedOn": "2026-11-07"}],
+    detailHref: "/projects/daily-games",
+    relatedLinks: [
+      { label: "Play Sketchlet", href: "https://sketchlet.app" },
+      { label: "Play Jacklet", href: "https://jacklet.vercel.app/" },
+    ],
+    tone: "coral",
+    status: "Public games",
+    timeline: "2026–present",
+    role: "Game concepts, rules, and experience direction",
+    collaborators: ["Michael Baker"],
+    tools: ["JavaScript", "Canvas API", "Vercel"],
+    evidence: ["Daily drawing prompt", "Daily blackjack deck", "Progress persistence"],
+    metrics: [],
+    summary:
+      "Sketchlet and Jacklet explore two ways to give people a reason to play each day. Sketchlet starts with a shared drawing prompt and leaves the interpretation open. Jacklet turns blackjack into a daily score challenge with a shared deck and a limited run. Both use a daily boundary to give a small game a recognizable rhythm, with very different kinds of decisions inside it.",
+    problem:
+      "A daily game needs a clear invitation, understandable rules, and a satisfying stopping point. It also needs to respect interruptions and explain what changes tomorrow. The design challenge is to make that structure approachable while leaving enough room for expression or strategy to make the day's play interesting.",
+    outcome:
+      "The two public games offer contrasting daily experiences. Sketchlet combines drawing tools, a shared prompt, and a gallery. Jacklet offers one daily blackjack run, a score, and a one-to-five-star result. Its published rules specify the same deck each day, a midnight Eastern reset, and progress saved in the current browser. These are working game structures; repeat participation and their appeal to other players remain questions to explore.",
+    decisions: [
+      "Give each game a shared daily starting point: a drawing prompt in Sketchlet and a deck in Jacklet.",
+      "Let Sketchlet emphasize interpretation and expression, while Jacklet emphasizes decisions within explicit scoring rules.",
+      "Give a daily session a boundary: one final drawing submission in Sketchlet and one limited run in Jacklet.",
+      "Preserve unfinished progress so an interruption does not have to end the day's play.",
+      "Make the rules and reset behavior visible so players know what counts and when a new challenge begins.",
+    ],
+    sections: [
+      {
+        title: "Sketchlet: one prompt, many interpretations",
+        body:
+          "Sketchlet uses a common prompt to invite different responses. The drawing tools support the creative work, while a gallery gives the day's prompt a shared setting. A separate free-draw canvas leaves room to practice beyond the daily submission. Its individual case study covers the drawing tools, recovery, touch input, and publication decisions in more detail.",
+      },
+      {
+        title: "Jacklet: one deck, a limited run",
+        body:
+          "Jacklet adapts blackjack into a points challenge without bets or splits. Three strikes end the run, and wins do not remove strikes. A win earns 100 points, each revealed card adds a point, and a loss costs 100. Players can spend points on jokers, with the price rising each purchase. That creates a decision about spending an existing score to try to extend the run.",
+      },
+      {
+        title: "Making the daily boundary understandable",
+        body:
+          "Jacklet shows the day's date and a countdown to the next deck. Its rules explain the midnight Eastern reset, saved progress, and the action needed to maintain a streak. Sketchlet attaches unfinished drawings to their original prompt date. Each game needs to distinguish today's challenge from earlier work and explain what a player can return to.",
+      },
+      {
+        title: "Two kinds of reward",
+        body:
+          "Sketchlet ends with an image a person has made and can share. Jacklet ends with a score and star result within a common daily challenge. The connection is the design of a small repeatable activity; the rewards differ because one game centers on expression and the other on card decisions. The next step is to see how other people understand and use those experiences.",
+      },
+    ],
+    nextSteps: [
+      "Add paired screenshots showing each game's starting state, play experience, and daily result.",
+      "Observe new players learning the rules, returning after an interruption, and understanding the daily reset.",
+      "Explore what makes people want to return, distinguishing personal enjoyment from evidence of repeat use by others.",
     ],
   },
   {
     slug: "making-tools",
     visibility: "listed",
     stage: "supporting",
-    priority: 80,
+    priority: 50,
     category: "Hobby tools",
     label: "Case study",
     emphasisLabel: "Active",
     title: "Making Tools",
     description:
       "A grouped case study about solving complex hobby problems with focused helper apps, from fantasy stats to RPG interfaces.",
-    cardImage: stockImage("photo-1516321318423-f06f85e504b3", "A laptop workspace with notes and small tools arranged for a technical project."),
+    cardImage: {"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball leaderboard: a tool built around a personal hobby."},
+    screenshots: [{"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball leaderboard: a tool built around a personal hobby.", "caption": "The baseball leaderboard: a tool built around a personal hobby.", "href": "https://michael-baker-content.github.io/fantasy-baseball/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/cine2helper-results.jpg", "alt": "Cine2Helper film results with person filters, sorting, and overlapping win conditions.", "caption": "Film results connect filtering and sorting with related game conditions.", "href": "https://cine2helper.vercel.app/", "capturedOn": "2026-11-07"}],
     detailHref: "/projects/making-tools",
     tone: "gold",
     status: "Toolmaking series",
@@ -321,7 +386,7 @@ export const projects = [
     summary:
       "Making Tools gathers hobby-driven helper apps into one portfolio story. Some of the most complex problems I have solved came from tools I made for my own interests: role-playing game character management, fantasy baseball and basketball league trackers, a learning tool for a movie trivia web game, and a daily blackjack app.",
     problem:
-      "Personal hobbies can create surprisingly serious software problems. Fantasy leagues need statistics, rankings, standings, and custom rules. Tabletop role-playing characters carry a dense web of stats and actions. Trivia and card games need practice loops, feedback, and enough structure to help users improve.",
+      "Personal hobbies can create surprisingly serious software problems. Fantasy leagues need statistics, rankings, standings, and support for small rule adjustments. Tabletop role-playing characters carry a dense web of stats and actions. Trivia and card games need practice loops, feedback, and enough structure to help users improve.",
     outcome:
       "This grouped case study shows how I use small, personally motivated products to solve real interface, data, and logic problems. The projects may be playful, but the underlying challenges include statistical modeling, information architecture, and interaction design.",
     decisions: [
@@ -335,7 +400,7 @@ export const projects = [
       {
         title: "Fantasy Leagues",
         body:
-          "The fantasy baseball and fantasy basketball tools were built for real-life leagues with custom needs. These apps pushed me toward more Python programming because sports data creates math-heavy problems: player statistics, rankings, standings, and the logic needed to make league state trustworthy.",
+          "The fantasy basketball dashboard became the starting point for a baseball dashboard built for another real-life league. Together they pushed me toward more Python programming and closer attention to statistics, scoring, and update timing. The Fantasy Sports Dashboards case study covers that progression in detail; here, they illustrate how a personal hobby can lead to substantial data and interface work.",
       },
       {
         title: "Character Sheets",
@@ -422,66 +487,70 @@ export const projects = [
     slug: "nba-roto-tracker",
     visibility: "listed",
     stage: "background",
-    priority: 90,
+    priority: 110,
     category: "Dashboard",
     label: "Case study",
-    title: "Fantasy Basketball Dashboard",
+    title: "Fantasy Sports Dashboards",
     description:
-      "A dashboard for turning a custom fantasy sports competition into clear standings, roster views, and live performance signals.",
-    cardImage: stockImage("photo-1546519638-68e109498ffc", "Basketball players competing near the hoop on an indoor court."),
+      "Fantasy league dashboards that grew from basketball into baseball, with a hosting journey from Railway through PythonAnywhere to GitHub Pages.",
+    cardImage: {"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball dashboard’s saved 2026 standings and category points."},
+    screenshots: [{"src": "/assets/projects/fantasy-baseball.jpg", "alt": "The baseball dashboard’s saved 2026 standings and category points.", "caption": "The baseball dashboard’s saved 2026 standings and category points.", "href": "https://michael-baker-content.github.io/fantasy-baseball/", "capturedOn": "2026-11-07"}],
     detailHref: "/projects/nba-roto-tracker",
-    repoHref: "https://github.com/michael-baker-content/nba-roto-tracker",
+    appHref: "https://michael-baker-content.github.io/fantasy-baseball/",
+    repoHref: "https://github.com/michael-baker-content/fantasy-baseball",
+    relatedLinks: [{ label: "Earlier NBA repository · includes baseball adaptation work", href: "https://github.com/michael-baker-content/nba-roto-tracker" }],
     tone: "blue",
-    status: "Public app",
+    status: "Seasonal projects · baseball results archived",
     timeline: "2026",
-    role: "Dashboard design, backend modeling, frontend implementation",
-    collaborators: ["Michael Baker"],
-    tools: ["Python", "Flask", "SQLite", "PostgreSQL", "Railway", "nba-api"],
-    evidence: ["Leaderboard design", "Roster pages", "Scoring model"],
-    metrics: [
-      { label: "Stack", value: "Flask" },
-      { label: "Data layer", value: "SQLite/Postgres" },
-      { label: "Pattern", value: "Live dashboard" },
-    ],
+    role: "League requirements, interface direction, and publishing workflow; coding primarily by Codex",
+    collaborators: ["Michael Baker", "Codex"],
+    tools: ["Python", "JavaScript", "MLB Stats API", "Railway", "PythonAnywhere", "GitHub Pages", "GitHub Actions"],
+    evidence: ["Basketball-to-baseball adaptation", "Hosting evolution", "Automated publishing"],
+    metrics: [],
     summary:
-      "Fantasy Basketball Dashboard turns a custom fantasy sports format into a self-hosted web app with standings, roster pages, and live leaderboard signals. It translates rules, stats, participants, and season state into something a league can inspect without relying on spreadsheets or chat updates.",
+      "These dashboards grew out of fantasy basketball and baseball leagues using familiar fantasy rules with small adjustments. Basketball provided the foundation for the baseball project shown here. Along the way, hosting moved from Railway to PythonAnywhere to GitHub Pages. Finding a practical way to keep a seasonal dashboard available became as interesting as building the standings, and introduced me to the possibilities of GitHub Actions.",
     problem:
-      "Custom fantasy competitions often live in spreadsheets or chat threads. That makes standings hard to inspect, difficult to share, and easy to misread when rosters, scoring categories, or rules change.",
+      "The league rules are largely conventional; the challenge is making standings, roster contributions, and player statistics easy to inspect. A seasonal project also needs a sustainable home. I wanted the results to remain available after the competition ended without an ongoing hosting bill or repeated attention just to keep the site online.",
     outcome:
-      "The app creates a dedicated home for participant state, scoring logic, roster detail, and leaderboard review while keeping the deployment path practical through Flask, a database layer, and Railway.",
+      "The baseball dashboard publishes standings, owner rosters, and searchable player statistics as a static website on GitHub Pages. Its season is now in archival mode, preserving saved results with scheduled statistics checks disabled in the project configuration. The basketball dashboard is seasonal: demand for its results falls away after the competition ends, and I plan to revisit it when the basketball playoffs return. Its repository remains the foundation of the baseball project and contains adaptation work alongside basketball material.",
     decisions: [
-      "Use Flask to keep the app small enough that the scoring model and request flow remain easy to inspect.",
-      "Support SQLite locally and PostgreSQL in production so development stays light while deployment has a durable database.",
-      "Separate leaderboard and roster views so users can inspect both the standings and the evidence behind them.",
-      "Treat the app as an operational dashboard for a real league, not only as a coding exercise.",
-      "Model competition rules explicitly so standings can be explained instead of merely displayed.",
+      "Use the basketball dashboard as the starting point for baseball, adapting the statistics and small league-specific rule adjustments.",
+      "Keep standings and roster detail connected so a league member can inspect the performances behind a score.",
+      "Separate Python data preparation from static publishing so the site can remain available on GitHub Pages without a running Python server.",
+      "Distinguish unavailable statistics from zero results, and make category direction and tied scores explicit.",
+      "Use GitHub Actions for statistics and publishing workflows, then preserve completed results when the competition ends.",
     ],
     sections: [
       {
-        title: "Dashboard Utility",
+        title: "Basketball: the starting point",
         body:
-          "The project is valuable because it formalizes a custom competition workflow. Instead of asking users to trust a manually updated sheet, the app gives the group a shared place to inspect standings, roster state, and the evidence behind movement on the leaderboard.",
+          "The basketball project established the idea of a dedicated league dashboard. I specified the league requirements and small rule adjustments and directed the interface and workflow; Codex handled most of the coding. I then used that foundation for baseball, adapting the statistics, rosters, and standings to a different sport. Some baseball adaptation work remains in the NBA repository, so its current contents span both sports. The separate baseball repository is the source for the dashboard shown in this case study.",
       },
       {
-        title: "Data Shape",
+        title: "Baseball: adapting the model",
         body:
-          "The data model has to translate league concepts into durable records: teams, players, rosters, scoring categories, standings, and update timing. That relationship between rules and data is the heart of the product.",
+          "Baseball introduces separate hitting and pitching categories, including rates where lower values are better. The dashboard supports configurable owners and rosters, category points, and tied rankings. A player without an appearance is different from a player who appeared and recorded zero; rates without a denominator remain unavailable. These distinctions matter because display choices can otherwise misrepresent the competition.",
       },
       {
-        title: "Deployment Path",
+        title: "Exploring the player pool",
         body:
-          "Railway gives the project a realistic production target while preserving a simple local development loop. SQLite keeps early iteration low-friction, while PostgreSQL gives production a more durable home.",
+          "The baseball Player Stats pages provide search, sorting, and filters for team, owner, position, and minimum playing time. Saved regular-season and postseason ranges support different questions. Roster pages explain an owner's results, while the wider player pool supports comparison. Manual position eligibility and review-sheet selections remain separate from routine statistics updates.",
       },
       {
-        title: "Operational Clarity",
+        title: "Finding a sustainable home",
         body:
-          "The win is not just that the app calculates standings. It makes a custom competition legible by putting backend modeling in service of a user-facing state problem.",
+          "The hosting journey went from Railway to PythonAnywhere and then GitHub Pages. In my setup, Railway brought monthly fees, while PythonAnywhere required periodic attention to keep the site available. GitHub Pages offered a way to leave the published results online at no hosting cost. Moving to a static website meant separating the work of retrieving and calculating statistics from the pages people browse. That fit a seasonal project: update the data while games are happening, then leave the results available afterward.",
+      },
+      {
+        title: "Updating and preserving results",
+        body:
+          "Python scripts prepare baseball statistics and publish JSON for the static website. GitHub Actions became a way to connect that preparation to publication: the statistics workflow checks completed games and scoring corrections, while a separate deployment workflow can publish website changes. This project helped spark my interest in what Actions can offer beyond hosting the code. The current archive configuration disables scheduled statistics checks while retaining the season’s saved results.",
       },
     ],
     nextSteps: [
-      "Add annotated screenshots of the leaderboard, roster pages, and scoring states.",
-      "Document the scoring model in plain language so a league member can understand why standings move.",
-      "Explain the local-to-production database path, including what changes between SQLite and PostgreSQL on Railway.",
+      "Add baseball roster and player-statistics screenshots to complement the saved standings view.",
+      "Document a worked scoring example that connects player totals, category points, ties, and overall rank.",
+      "Revisit the basketball dashboard when the playoffs return, separating basketball-specific material from the baseball adaptation work.",
     ],
   },
   {
@@ -494,7 +563,9 @@ export const projects = [
     title: "Movie Database Project",
     description:
       "A focused movie lookup experience that turns a large entertainment database into fast, useful decision support.",
-    cardImage: stockImage("photo-1489599849927-2ee91cede3ba", "Rows of red seats inside a movie theater."),
+    cardImage: {"src": "/assets/projects/cine2helper.jpg", "alt": "Cine2Helper homepage introducing film connections and win conditions."},
+    screenshots: [{"src": "/assets/projects/cine2helper.jpg", "alt": "Cine2Helper homepage introducing film connections and win conditions.", "caption": "The movie companion introduces browsing by game win conditions.", "href": "https://cine2helper.vercel.app/", "capturedOn": "2026-11-07"}, {"src": "/assets/projects/cine2helper-results.jpg", "alt": "Cine2Helper film results with person filters, sorting, and overlapping win conditions.", "caption": "Film results connect filtering and sorting with related game conditions.", "href": "https://cine2helper.vercel.app/", "capturedOn": "2026-11-07"}],
+    appHref: "https://cine2helper.vercel.app/",
     detailHref: "/projects/cine2helper",
     repoHref: "https://github.com/michael-baker-content/cine2helper",
     tone: "coral",
@@ -560,7 +631,8 @@ export const projects = [
     emphasisLabel: "Featured",
     title: "Bakerversity",
     description: "An LMS prototype exploring responsive technical-course authoring, content management, and learner presentation.",
-    cardImage: stockImage("https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1200", "People walking near a university building and graduation lawn."),
+    cardImage: {"src": "/assets/projects/bakerversity.jpg", "alt": "The Bakerversity homepage introduces free technical courses."},
+    screenshots: [{"src": "/assets/projects/bakerversity.jpg", "alt": "The Bakerversity homepage introduces free technical courses.", "caption": "The Bakerversity homepage introduces free technical courses.", "href": "https://bakerversity.vercel.app/", "capturedOn": "2026-11-07"}],
     detailHref: "/projects/bakerversity",
     appHref: "https://bakerversity.vercel.app",
     repoHref: "https://github.com/michael-baker-content/bakerversity",
@@ -633,7 +705,8 @@ export const projects = [
     "emphasisLabel": "Public site",
     "title": "BakerLinks",
     "description": "A personal publishing tool for sharing projects, links, and an introduction, with flexible styling, curated animated backgrounds, and Markdown About content.",
-    "cardImage": stockImage("photo-1516321497487-e288fb19713f", "A laptop workspace used for publishing and managing online links."),
+    cardImage: {"src": "/assets/projects/bakerlinks.jpg", "alt": "A customized BakerLinks profile with project links and a cloud background."},
+    screenshots: [{"src": "/assets/projects/bakerlinks.jpg", "alt": "A customized BakerLinks profile with project links and a cloud background.", "caption": "A customized BakerLinks profile with project links and a cloud background.", "href": "https://bakerlinks.com/michael", "capturedOn": "2026-11-07"}],
     "detailHref": "/projects/bakerlinks",
     "appHref": "https://bakerlinks.com",
     "repoHref": "https://github.com/michael-baker-content/bakerlinks",
@@ -706,73 +779,71 @@ export const projects = [
     slug: "saske",
     visibility: "listed",
     stage: "background",
-    priority: 110,
+    priority: 120,
     category: "Interactive tracker",
     label: "Case study",
-    title: "RPG Character Tracker",
+    title: "Saske · Pathfinder Session Tracker",
     description:
-      "A dynamic character-tracking interface for dense role-playing systems, built around calculated values and play-facing clarity.",
-    cardImage: stockImage("photo-1605870445919-838d190e8e1b", "Role-playing dice arranged on a tabletop."),
+      "A personal Pathfinder tracker whose next challenge is making phone use simpler and more pleasant than a plain-text session note.",
+    cardImage: { src: "/assets/projects/saske.jpg", alt: "Saske’s level 9 combat panel with core statistics, actions, and weapon cards." },
+    screenshots: [{ src: "/assets/projects/saske.jpg", alt: "Saske’s level 9 combat panel with core statistics, actions, and weapon cards.", caption: "The live tracker shows Saske at level 9, with combat information grouped for play.", href: "https://michael-baker-content.github.io/saske/", capturedOn: "2026-11-07" }],
     detailHref: "/projects/saske",
+    appHref: "https://michael-baker-content.github.io/saske/",
     repoHref: "https://github.com/michael-baker-content/saske",
     tone: "blue",
-    status: "Public tool",
-    timeline: "2026",
-    role: "Interactive tool design, rules modeling, JavaScript implementation",
+    status: "Public personal tool · further work planned",
+    timeline: "2026–present",
+    role: "Character requirements, interface direction, and play workflow",
     collaborators: ["Michael Baker"],
-    tools: ["JavaScript", "Pathfinder 2E", "RPG systems"],
-    evidence: ["Dynamic tracker", "Rules support", "Player workflow"],
-    metrics: [
-      { label: "Domain", value: "RPG tools" },
-      { label: "System", value: "Rules-heavy" },
-      { label: "Core object", value: "Tracker" },
-    ],
+    tools: ["HTML", "CSS", "JavaScript", "JSON", "Browser storage", "GitHub Pages"],
+    evidence: ["Level 9 character", "Companion tracking", "Medicine workflow", "Session reports"],
+    metrics: [],
     summary:
-      "RPG Character Tracker is a character-management project for dense tabletop rules systems. It began from Pathfinder 2E, where character state contains many calculated, conditional, and frequently referenced values, and it explores how a dynamic interface can make that information easier to use during play.",
+      "Saske is a session tracker for my level 9 Pathfinder 2E character, Saske Ullaell, and her animal companion, Haki. I like the interface, but during play it still has not become more useful to me than a plain-text note on my phone. Moving through menus on a small screen takes effort that the extra features do not yet justify. The next phase is about making the experience much simpler and more pleasant to use.",
     problem:
-      "Rules-heavy role-playing characters contain a lot of interdependent information. Static sheets can make it hard to see what changed, what is derived, what is conditional, and what the player actually needs during a session.",
+      "During a tabletop session, I need the right information with very little navigation. Combat, companion, skills, inventory, and reference panels organize the material, but switching among them on my phone is less convenient than scanning a simple note. A tablet might give the interface more room, but I do not own one. The design needs to work for the device I actually bring to the table.",
     outcome:
-      "The project creates a custom interface for character information that can respond to the rules system and the needs of the table, with dynamic behavior where static reference becomes friction.",
+      "The live tracker displays Saske and Haki at level 9, with combat information, conditions, medicine tools, inventory, notes, and local session storage. Those capabilities have not yet made it my preferred tool during play. My next goal is to reduce the effort of finding and using information on a phone. A ground-up rebuild is one possibility, informed by what I have learned from this version.",
     decisions: [
-      "Start with a specific rules system so the tool can be tested against real play needs instead of generic character-sheet theory.",
-      "Prioritize dynamic behavior only where rules density creates real friction.",
-      "Use lightweight JavaScript so the prototype stays easy to modify as the rules model changes.",
-      "Treat table usability as the goal, not exhaustive rules coverage.",
-      "Organize the interface around player action rather than sourcebook structure.",
+      "Build around my own character and actual sessions rather than trying to support every Pathfinder character.",
+      "Reconsider the panel structure where moving between menus costs more effort than scanning a plain-text note.",
+      "Expose the components behind calculated values so the numbers can be understood and checked.",
+      "Keep session state in the browser and character defaults in a separate data file.",
+      "Judge future changes against actual phone use during a session, with simplicity and a pleasant experience as the priorities.",
     ],
     sections: [
       {
-        title: "Rules Density",
+        title: "A character I actually play",
         body:
-          "The design problem comes from rules density. Pathfinder-style characters include derived values, modifiers, proficiency changes, resources, and context-specific decisions. The app is strongest where dynamic handling removes repeated lookup or manual recalculation.",
+          "Saske is a ranger with a medicine role and an animal companion. That creates distinct tasks: managing her actions and attacks, checking Haki’s state, and treating party members. The tracker brings those tasks together, but my own use has revealed a gap between having the features and wanting to navigate them during play. The character is now level 9; improving the experience matters more than simply adding another level of data.",
       },
       {
-        title: "Player Workflow",
+        title: "Making changing values understandable",
         body:
-          "A good character sheet supports action at the table. That means the interface should help a player find what they need quickly, understand what changed, and avoid breaking the rhythm of play.",
+          "The tracker brings together core statistics, saves, weapon cards, and conditions. The implementation includes condition-adjusted values and explanations of attack calculations. The design goal is to make the effects of a change visible without requiring a player to reconstruct every modifier during a turn. The displayed calculations still need checking against the character and applicable rules as the tool evolves.",
       },
       {
-        title: "System Scope",
+        title: "Medicine and companion workflows",
         body:
-          "Because role-playing systems vary widely, choosing one rules-heavy system gives the app a strong constraint. It makes the project easier to evaluate because the tool can be judged against real play needs instead of abstract flexibility.",
+          "Haki has a dedicated panel for health, conditions, attacks, and barding. Medicine tools bring party targets, treatment choices, and Battle Medicine cooldowns together. These are specific workflows within my character’s role, where a generic list of skills would leave much of the session management to memory.",
       },
       {
-        title: "Usable State",
+        title: "The plain-text benchmark",
         body:
-          "RPG Character Tracker shows how interface design can clarify a dense knowledge system. The same pattern applies beyond games: make complex state visible, actionable, and easier to trust.",
+          "A plain-text note on my phone is the practical benchmark. It gives me information without making me decide which menu to open. I still like Saske’s visual interface, and it might feel more comfortable on a tablet, but that is not the device I have. Further development will focus on making the essential actions dead simple and pleasant on a phone. I may rebuild from the ground up rather than keep extending the current structure; that is a direction to explore, not a decision already made.",
       },
     ],
     nextSteps: [
-      "Add screenshots of the tracker in common play-facing states.",
-      "Document the calculated fields that save the most time or prevent the most lookup friction.",
-      "Clarify which values are automated, which remain manual, and which rules are intentionally out of scope.",
+      "Identify the information and actions I reach for during play, using my plain-text phone note as the comparison.",
+      "Explore a simpler phone experience with less menu navigation, keeping only the interactions that earn their place.",
+      "Consider a ground-up rebuild informed by this version, and try the simpler approach during actual sessions before expanding it.",
     ],
   },
   {
     slug: "notion-clean",
     visibility: "listed",
     stage: "background",
-    priority: 120,
+    priority: 130,
     category: "Workflow utility",
     label: "Case study",
     title: "Notion Archive Cleaner",
@@ -838,13 +909,14 @@ export const projects = [
     slug: "github-repo-journal",
     visibility: "listed",
     stage: "background",
-    priority: 130,
+    priority: 70,
     category: "Technical writing",
     label: "Case study",
-    title: "GitHub Repo Journal",
+    title: "Development Journal",
     description:
-      "A journal of independent projects: what I am building, the decisions behind it, and what I want to explore next.",
-    cardImage: stockImage("photo-1499750310107-5fef28a66643", "A laptop and notebook set up for writing technical notes."),
+      "Development notes from my independent projects: how they work, the choices behind them, and what changes along the way.",
+    cardImage: {"src": "/assets/projects/development-journal.jpg", "alt": "The journal index with search, topic tags, and development notes."},
+    screenshots: [{"src": "/assets/projects/development-journal.jpg", "alt": "The journal index with search, topic tags, and development notes.", "caption": "The journal index with search, topic tags, and development notes.", "href": "https://michael-baker-content.github.io/blog/", "capturedOn": "2026-11-07"}],
     detailHref: "/projects/github-repo-journal",
     appHref: "https://michael-baker-content.github.io/",
     repoHref: "https://github.com/michael-baker-content/michael-baker-content.github.io",
@@ -861,7 +933,7 @@ export const projects = [
       { label: "Content", value: "Field notes" },
     ],
     summary:
-      "GitHub Repo Journal brings my writing experience into my independent projects. The site pairs project overviews with field notes about the work as it happens: returning to a dormant idea, refining an interface, or discovering what a dataset leaves out.",
+      "Development Journal is my customized Astro blog, hosted on GitHub Pages. It brings together technical walkthroughs, implementation details, and reflections on my independent projects, explaining how they work and the decisions behind them. The writing follows the work as it develops, from exploring an idea to revisiting an interface or solving a data problem.",
     problem:
       "A repository holds the code, but understanding a project also takes context: what I wanted to explore, why I chose an approach, and what I learned. That explanation needs room beyond a README or portfolio card.",
     outcome:

@@ -2,7 +2,7 @@
 
 Captured before the readability pass on October 15, 2026. This is internal reference material, not public page copy. The source briefs remain the underlying evidence. No new production checks or user research were performed during the copy edit.
 
-Preserve these limits in future revisions: implemented code is not proof of deployment; Sketchlet account recovery and groups need release verification; BakerParks deployment parity and manual accessibility testing remain open. Neither project has established comparative user outcomes. Do not turn goals into measured results.
+Preserve these limits in future revisions: implemented code is not proof of deployment; Sketchlet account recovery and groups need release verification; Baker Parks deployment parity and manual accessibility testing remain open. Neither project has established comparative user outcomes. Do not turn goals into measured results.
 
 The prior records below retain detailed review dates, limitations, and validation tasks for reference.
 
@@ -90,7 +90,7 @@ The prior records below retain detailed review dates, limitations, and validatio
     category: "Civic information",
     label: "Case study",
     emphasisLabel: "Active",
-    title: "BakerParks",
+    title: "Baker Parks",
     description: "An independent San Francisco parks guide that turns fragmented public data into searchable destinations, with source links, original photography, and paths to official services.",
     cardImage: stockImage("photo-1500530855697-b586d89ba3ee", "A green public park with open grass, trees, and water."),
     detailHref: "/projects/bakerparks",
@@ -117,7 +117,7 @@ The prior records below retain detailed review dates, limitations, and validatio
       "Original photography"
     ],
     metrics: [],
-    summary: "BakerParks, called SF Parks Explorer in the application and repository, began after I read an article about frustration with the SF Parks website. It brings selected public records, park information, maps, and scheduled transit context into one discovery experience. The aim is to help residents and visitors understand their options while keeping policies, registration, permits, and reservations with the City of San Francisco.",
+    summary: "Baker Parks, called SF Parks Explorer in the application and repository, began after I read an article about frustration with the SF Parks website. It brings selected public records, park information, maps, and scheduled transit context into one discovery experience. The aim is to help residents and visitors understand their options while keeping policies, registration, permits, and reservations with the City of San Francisco.",
     problem: "Planning a park visit can mean piecing together property records, amenity listings, facility pages, maps, transit schedules, and separate reservation systems. Those sources serve different institutional purposes. The challenge is to translate them into useful choices without disguising uncertainty or creating a competing official service.",
     outcome: "The implementation reviewed on October 14, 2026 generates 249 destination records, with nine area and 41 populated neighborhood landing records. It supports search, shareable filters, optional maps, source links, and nearby scheduled transit context. A local-only editor manages notices, imagery, and coordinate corrections. These figures describe implemented scope, not measured resident impact; parity between the reviewed source and the public deployment remains to be checked.",
     decisions: [

@@ -7,10 +7,10 @@ A personal portfolio connecting professional experience in web production, techn
 ## What it presents
 
 - **Professional experience:** content production, editorial systems, accessibility work, and collaboration across publishing teams.
-- **Selected projects:** Sketchlet, BakerLinks, BakerParks / SF Parks Explorer, and Bakerversity.
+- **Selected projects:** Sketchlet, BakerLinks, Baker Parks / SF Parks Explorer, and Bakerversity.
 - **Case studies:** project context, responsibilities, implementation decisions, current results, limitations, and next steps, with application and repository links where available.
 
-The portfolio is actively evolving. Some project cards still use stock imagery while product screenshots and more detailed evidence are being collected. The deployed site may differ from local changes awaiting publication.
+The portfolio is actively evolving. Eleven of the thirteen listed case studies include product screenshots; Mike's List and Notion Archive Cleaner still use stock card imagery. Further evidence collection will focus on specific workflows and decisions. The deployed site may differ from local changes awaiting publication.
 
 ## How it works
 
@@ -141,6 +141,8 @@ Import the repository using the Vite build settings:
 The frontend can also be hosted as static files with a route fallback. `public/_redirects` supplies that fallback for hosts such as Cloudflare Pages. The Vercel content endpoint does not run on a static-only host; dashboard persistence requires a compatible backend. Without one, the public site uses repository defaults.
 
 ### Before publishing
+
+The [editorial improvement plan](docs/portfolio-improvement-plan.md) tracks the next content pass, including distinct roles for overlapping case studies, professional experience examples, and decision-focused product evidence. The [current release checklist](docs/current-release-checklist.md) records the scope and remaining verification for the November 7 content update.
 
 1. Check the changed pages locally, including narrow layouts and navigation.
 2. Run `npm test` and `npm run build`.

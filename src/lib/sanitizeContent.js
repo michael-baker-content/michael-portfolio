@@ -16,7 +16,7 @@ const MIKES_LIST_NEXT_STEPS = [
   "Turn repeated enrichment tasks into reusable review tools so the workflow gets faster while human judgment remains visible.",
 ];
 
-const CODEX_COLLABORATOR_SLUGS = new Set(["portfolio", "mikeslist"]);
+const CODEX_COLLABORATOR_SLUGS = new Set(["portfolio", "mikeslist", "nba-roto-tracker"]);
 const PROJECT_STAGES = new Set(["featured", "supporting", "background", "template"]);
 
 function cleanText(value, maxLength = MAX_TEXT_LENGTH) {
@@ -89,7 +89,7 @@ function migrateLegacyProject(project = {}) {
     ...project,
     slug: "mikeslist",
     title: title === "Bay Area Show Explorer" || !title ? "Mike's List" : project.title,
-    appHref: appHref.includes("../Music") || !appHref ? "https://mikeslist.xyz" : project.appHref,
+    appHref: "",
     repoHref: repoHref.includes("bay-area-music-calendar") || !repoHref ? "https://github.com/michael-baker-content/mikeslist" : project.repoHref,
   };
 }
@@ -166,9 +166,17 @@ function cleanProject(project = {}) {
     ...migratedProject,
     slug,
     detailHref: slug ? `/projects/${slug}` : "",
-    appHref: cleanUrl(migratedProject.appHref),
+    appHref: isMikesList ? "" : cleanUrl(migratedProject.appHref),
     repoHref: cleanUrl(migratedProject.repoHref),
+    relatedLinks: cleanObjectArray(migratedProject.relatedLinks, (link) => ({
+      label: cleanText(link.label, 120),
+      href: cleanUrl(link.href),
+    })).filter((link) => link.label && link.href),
     cardImage: cleanImage(migratedProject.cardImage),
+    screenshots: cleanObjectArray(migratedProject.screenshots, (shot) => {
+      const image = cleanImage(shot);
+      return image ? { ...image, caption: cleanText(shot.caption, 500), href: cleanUrl(shot.href), capturedOn: cleanText(shot.capturedOn, 30) } : null;
+    }),
     priority: cleanNumber(migratedProject.priority),
     visibility: migratedProject.visibility === "hidden" ? "hidden" : "listed",
     stage: PROJECT_STAGES.has(migratedProject.stage) ? migratedProject.stage : "supporting",

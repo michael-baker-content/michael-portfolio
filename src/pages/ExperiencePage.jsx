@@ -50,7 +50,7 @@ export function ExperiencePage({ content }) {
           <h2 className="mt-3 text-4xl md:text-5xl">Putting that experience to work in software.</h2>
         </div>
         <div className="space-y-5 text-lg leading-8 text-muted">
-          <p>Sketchlet brings drawing tools, a drawing-tool guide, and a separate practice canvas together. BakerParks combines public information, filtering, and my own photography. My hobby tools explore how to make complex rules and statistics easier to use.</p>
+          <p>Sketchlet brings drawing tools, a drawing-tool guide, and a separate practice canvas together. Baker Parks combines public information, filtering, and my own photography. My hobby tools explore how to make complex rules and statistics easier to use.</p>
           <p>These are independent applications and prototypes, with their own constraints and lessons. Their case studies describe the work and what remains to be developed.</p>
           <div className="flex flex-wrap gap-5">
             <Link className="editorial-link" href="/#work">See selected projects</Link>

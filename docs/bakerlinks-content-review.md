@@ -14,7 +14,7 @@ Updated November 7, 2026. Local portfolio content update; no dashboard save or p
 
 ## Placement and content model
 
-Repository order is now Sketchlet (10), BakerLinks (15), BakerParks (20), Bakerversity (40). BakerLinks moves to second and BakerParks to third. In a subsequent requested selection change, Bakerversity replaces Making Tools in the first four; Making Tools moves to priority 80 and remains listed as supporting work. Bakerversity is featured. BakerLinks retains its supporting stage; priority controls order independently.
+Repository order is now Sketchlet (10), BakerLinks (15), Baker Parks (20), Bakerversity (40). BakerLinks moves to second and Baker Parks to third. In a subsequent requested selection change, Bakerversity replaces Making Tools in the first four; Making Tools moves to priority 80 and remains listed as supporting work. Bakerversity is featured. BakerLinks retains its supporting stage; priority controls order independently.
 
 The live content endpoint returned content: null and source: default during discovery. Live card and case-study copy matched the previous repository copy. This response does not establish that no dashboard content has ever been saved. Saved fields can override defaults, so recheck the endpoint before any eventual publication. Do not change merge behavior to force this copy over dashboard edits.
 
